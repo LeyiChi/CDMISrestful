@@ -1,0 +1,11 @@
+
+
+20151009 ³ØÊ¤Ç¿ 
+CDMISrestful v1.0.0.0
+
+20151010 ¹¶Áá
+ÐÞ¸Ä:
+    1.DataMethod: VitalInfoMethod.cs, RiskInfoMethod.cs, MessageMethod.cs
+    2.DataModles: Message.cs, PlanInfo.cs, VitalInfo.cs
+    3.Controllers£ºMessageController
+    4.Models£ºIMessageRepository£¬MessageRepository

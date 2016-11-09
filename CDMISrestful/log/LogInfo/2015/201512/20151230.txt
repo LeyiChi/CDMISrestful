@@ -1,0 +1,200 @@
+
+ 
+记录时间：2015-12-30 12:28:10,903 
+线程ID:[6] 
+日志级别：  INFO  
+日志描述：
+            Action执行时间监控：
+            ControllerName：MessageController
+            ActionName:GetDataByStatus
+            开始时间：2015/12/30 12:27:58
+            结束时间：2015/12/30 12:28:10
+            总 时 间：12.4904139秒
+            Action参数：AccepterID=U201511170002&NotificationType=Appointment&Status={Status}
+            Http请求头:Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN, zh; q=0.8
+Host: localhost:7516
+Referer: http://localhost:7516/Help/Api/GET-Api-v1-MessageInfo-GetDataByStatus_AccepterID_NotificationType_Status
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2427.7 Safari/537.36
+
+            客户端IP：::1,
+            HttpMethod:GET
+                    
+ 
+
+ 
+记录时间：2015-12-30 12:32:23,067 
+线程ID:[5] 
+日志级别：  INFO  
+日志描述：
+            Action执行时间监控：
+            ControllerName：PlanInfoController
+            ActionName:GetComplianceAllSignsListByPeriod
+            开始时间：2015/12/30 12:32:22
+            结束时间：2015/12/30 12:32:23
+            总 时 间：0.1180935秒
+            Action参数：UserId=U201511170002&PlanNo=PLN201512100001&StartDate=&EndDate=&ItemType={ItemType}&ItemCode={ItemCode}
+            Http请求头:Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN, zh; q=0.8
+Host: localhost:7516
+Referer: http://localhost:7516/Help/Api/GET-Api-v1-PlanInfo-PlanInfoChart_UserId_PlanNo_StartDate_EndDate_ItemType_ItemCode
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2427.7 Safari/537.36
+
+            客户端IP：::1,
+            HttpMethod:GET
+                    
+ 
+
+ 
+记录时间：2015-12-30 12:33:05,726 
+线程ID:[6] 
+日志级别：  INFO  
+日志描述：
+            Action执行时间监控：
+            ControllerName：PlanInfoController
+            ActionName:GetComplianceAllSignsListByPeriod
+            开始时间：2015/12/30 12:32:59
+            结束时间：2015/12/30 12:33:05
+            总 时 间：6.4622526秒
+            Action参数：UserId=U201511170002&PlanNo=PLN201512100001&StartDate=20151210&EndDate=20160110&ItemType={ItemType}&ItemCode={ItemCode}
+            Http请求头:Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN, zh; q=0.8
+Host: localhost:7516
+Referer: http://localhost:7516/Help/Api/GET-Api-v1-PlanInfo-PlanInfoChart_UserId_PlanNo_StartDate_EndDate_ItemType_ItemCode
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2427.7 Safari/537.36
+
+            客户端IP：::1,
+            HttpMethod:GET
+                    
+ 
+
+ 
+记录时间：2015-12-30 12:39:16,259 
+线程ID:[70] 
+日志级别：  INFO  
+日志描述：
+            Action执行时间监控：
+            ControllerName：MessageController
+            ActionName:GetDataByStatus
+            开始时间：2015/12/30 12:38:34
+            结束时间：2015/12/30 12:39:16
+            总 时 间：42.2292454秒
+            Action参数：AccepterID=U201511170002&NotificationType=Appointment&Status=0
+            Http请求头:Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN, zh; q=0.8
+Host: localhost:7516
+Referer: http://localhost:7516/Help/Api/GET-Api-v1-MessageInfo-GetDataByStatus_AccepterID_NotificationType_Status
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2427.7 Safari/537.36
+
+            客户端IP：::1,
+            HttpMethod:GET
+                    
+ 
+
+ 
+记录时间：2015-12-30 12:39:40,313 
+线程ID:[70] 
+日志级别：  INFO  
+日志描述：
+            Action执行时间监控：
+            ControllerName：MessageController
+            ActionName:GetDataByStatus
+            开始时间：2015/12/30 12:39:19
+            结束时间：2015/12/30 12:39:40
+            总 时 间：20.4740848秒
+            Action参数：AccepterID=U201511170002&NotificationType=Appointment&Status={Status}
+            Http请求头:Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN, zh; q=0.8
+Host: localhost:7516
+Referer: http://localhost:7516/Help/Api/GET-Api-v1-MessageInfo-GetDataByStatus_AccepterID_NotificationType_Status
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2427.7 Safari/537.36
+
+            客户端IP：::1,
+            HttpMethod:GET
+                    
+ 
+
+ 
+记录时间：2015-12-30 12:50:52,208 
+线程ID:[74] 
+日志级别：  INFO  
+日志描述：
+            Action执行时间监控：
+            ControllerName：MessageController
+            ActionName:GetSMSDialogue
+            开始时间：2015/12/30 12:50:18
+            结束时间：2015/12/30 12:50:52
+            总 时 间：33.6335129秒
+            Action参数：Reciever=DOC201506180002&SendBy=PID201506180016
+            Http请求头:Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN, zh; q=0.8
+Host: localhost:7516
+Referer: http://localhost:7516/Help/Api/GET-Api-v1-MessageInfo-messages_Reciever_SendBy
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2427.7 Safari/537.36
+
+            客户端IP：::1,
+            HttpMethod:GET
+                    
+ 
+
+ 
+记录时间：2015-12-30 12:58:15,830 
+线程ID:[42] 
+日志级别：  INFO  
+日志描述：
+            Action执行时间监控：
+            ControllerName：MessageController
+            ActionName:GetSMSDialogue
+            开始时间：2015/12/30 12:58:00
+            结束时间：2015/12/30 12:58:15
+            总 时 间：14.9066656秒
+            Action参数：Reciever=DOC201506180002&SendBy=PID201506180016
+            Http请求头:Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN, zh; q=0.8
+Host: localhost:7516
+Referer: http://localhost:7516/Help/Api/GET-Api-v1-MessageInfo-messages_Reciever_SendBy
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2427.7 Safari/537.36
+
+            客户端IP：::1,
+            HttpMethod:GET
+                    
+ 
+
+ 
+记录时间：2015-12-30 12:58:36,956 
+线程ID:[9] 
+日志级别：  INFO  
+日志描述：
+            Action执行时间监控：
+            ControllerName：MessageController
+            ActionName:GetSMSDialogue
+            开始时间：2015/12/30 12:58:20
+            结束时间：2015/12/30 12:58:36
+            总 时 间：16.3603009秒
+            Action参数：Reciever=DOC201506180002&SendBy=PID201506180016
+            Http请求头:Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN, zh; q=0.8
+Host: localhost:7516
+Referer: http://localhost:7516/Help/Api/GET-Api-v1-MessageInfo-messages_Reciever_SendBy
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2427.7 Safari/537.36
+
+            客户端IP：::1,
+            HttpMethod:GET
+                    
+ 

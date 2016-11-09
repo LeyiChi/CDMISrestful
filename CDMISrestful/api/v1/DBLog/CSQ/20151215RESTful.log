@@ -1,0 +1,20 @@
+2015/12/15 19:18:58	::1             	ERR	MessageMethod.PsNotificationGetDataByStatus                 	数据库操作异常！ error information : Column does not exist: Title
+   在 InterSystems.Data.CacheClient.CacheDataReader.GetOrdinal(String columnName)
+   在 InterSystems.Data.CacheClient.CacheDataReader.get_Item(String value)
+   在 CDMISrestful.DataMethod.MessageMethod.PsNotificationGetDataByStatus(DataConnection pclsCache, String AccepterID, String NotificationType, String Status) 位置 f:\Work\chronic disease management\github\CDMISrestful\CDMISrestful\DataMethod\MessageMethod.cs:行号 329
+2015/12/15 19:22:20	::1             	ERR	MessageMethod.PsNotificationGetDataByStatus                 	数据库操作异常！ error information : Column does not exist: Title
+   在 InterSystems.Data.CacheClient.CacheDataReader.GetOrdinal(String columnName)
+   在 InterSystems.Data.CacheClient.CacheDataReader.get_Item(String value)
+   在 CDMISrestful.DataMethod.MessageMethod.PsNotificationGetDataByStatus(DataConnection pclsCache, String AccepterID, String NotificationType, String Status) 位置 f:\Work\chronic disease management\github\CDMISrestful\CDMISrestful\DataMethod\MessageMethod.cs:行号 329
+2015/12/15 19:22:50	::1             	ERR	MessageMethod.PsNotificationGetDataByStatus                 	数据库操作异常！ error information : Column does not exist: Title
+   在 InterSystems.Data.CacheClient.CacheDataReader.GetOrdinal(String columnName)
+   在 InterSystems.Data.CacheClient.CacheDataReader.get_Item(String value)
+   在 CDMISrestful.DataMethod.MessageMethod.PsNotificationGetDataByStatus(DataConnection pclsCache, String AccepterID, String NotificationType, String Status) 位置 f:\Work\chronic disease management\github\CDMISrestful\CDMISrestful\DataMethod\MessageMethod.cs:行号 329
+2015/12/15 19:32:08	::1             	ERR	MessageMethod.PsNotificationGetDataByStatus                 	数据库操作异常！ error information : Column does not exist: Description
+   在 InterSystems.Data.CacheClient.CacheDataReader.GetOrdinal(String columnName)
+   在 InterSystems.Data.CacheClient.CacheDataReader.get_Item(String value)
+   在 CDMISrestful.DataMethod.MessageMethod.PsNotificationGetDataByStatus(DataConnection pclsCache, String AccepterID, String NotificationType, String Status) 位置 f:\Work\chronic disease management\github\CDMISrestful\CDMISrestful\DataMethod\MessageMethod.cs:行号 330
+2015/12/15 19:32:50	::1             	ERR	MessageMethod.PsNotificationGetDataByStatus                 	数据库操作异常！ error information : Column does not exist: SendTime
+   在 InterSystems.Data.CacheClient.CacheDataReader.GetOrdinal(String columnName)
+   在 InterSystems.Data.CacheClient.CacheDataReader.get_Item(String value)
+   在 CDMISrestful.DataMethod.MessageMethod.PsNotificationGetDataByStatus(DataConnection pclsCache, String AccepterID, String NotificationType, String Status)

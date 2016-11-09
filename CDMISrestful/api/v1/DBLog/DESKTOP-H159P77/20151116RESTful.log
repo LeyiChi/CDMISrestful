@@ -1,0 +1,77 @@
+2015/11/16 15:53:07	::1             	ERR	PlanInfoMethod.GetComplianceListInC                         	数据库操作异常！ error information : 索引超出范围。必须为非负值并小于集合大小。
+参数名: index
+   在 System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   在 System.Collections.Generic.List`1.get_Item(Int32 index)
+   在 CDMISrestful.DataMethod.PlanInfoMethod.GetComplianceListInC(DataConnection pclsCache, String PatientId, String StartDate, String EndDate, String Module) 位置 c:\Users\syf\Desktop\CDMISrestful\CDMISrestful\DataMethod\PlanInfoMethod.cs:行号 2818
+2015/11/16 15:55:58	::1             	ERR	PlanInfoMethod.GetComplianceListInC                         	数据库操作异常！ error information : 索引超出范围。必须为非负值并小于集合大小。
+参数名: index
+   在 System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   在 System.Collections.Generic.List`1.get_Item(Int32 index)
+   在 CDMISrestful.DataMethod.PlanInfoMethod.GetComplianceListInC(DataConnection pclsCache, String PatientId, String StartDate, String EndDate, String Module) 位置 c:\Users\syf\Desktop\CDMISrestful\CDMISrestful\DataMethod\PlanInfoMethod.cs:行号 2818
+2015/11/16 15:56:07	::1             	ERR	PlanInfoMethod.GetComplianceListInC                         	数据库操作异常！ error information : 索引超出范围。必须为非负值并小于集合大小。
+参数名: index
+   在 System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   在 System.Collections.Generic.List`1.get_Item(Int32 index)
+   在 CDMISrestful.DataMethod.PlanInfoMethod.GetComplianceListInC(DataConnection pclsCache, String PatientId, String StartDate, String EndDate, String Module) 位置 c:\Users\syf\Desktop\CDMISrestful\CDMISrestful\DataMethod\PlanInfoMethod.cs:行号 2818
+2015/11/16 15:56:48	::1             	ERR	PlanInfoMethod.GetComplianceListInC                         	数据库操作异常！ error information : 索引超出范围。必须为非负值并小于集合大小。
+参数名: index
+   在 System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   在 System.Collections.Generic.List`1.get_Item(Int32 index)
+   在 CDMISrestful.DataMethod.PlanInfoMethod.GetComplianceListInC(DataConnection pclsCache, String PatientId, String StartDate, String EndDate, String Module) 位置 c:\Users\syf\Desktop\CDMISrestful\CDMISrestful\DataMethod\PlanInfoMethod.cs:行号 2818
+2015/11/16 16:17:41	::1             	ERR	PlanInfoMethod.GetComplianceListInC                         	数据库操作异常！ error information : 索引超出范围。必须为非负值并小于集合大小。
+参数名: index
+   在 System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   在 System.Collections.Generic.List`1.get_Item(Int32 index)
+   在 CDMISrestful.DataMethod.PlanInfoMethod.GetComplianceListInC(DataConnection pclsCache, String PatientId, String StartDate, String EndDate, String Module) 位置 c:\Users\syf\Desktop\CDMISrestful\CDMISrestful\DataMethod\PlanInfoMethod.cs:行号 2818
+2015/11/16 16:17:56	::1             	ERR	PlanInfoMethod.GetComplianceListInC                         	数据库操作异常！ error information : 索引超出范围。必须为非负值并小于集合大小。
+参数名: index
+   在 System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   在 System.Collections.Generic.List`1.get_Item(Int32 index)
+   在 CDMISrestful.DataMethod.PlanInfoMethod.GetComplianceListInC(DataConnection pclsCache, String PatientId, String StartDate, String EndDate, String Module) 位置 c:\Users\syf\Desktop\CDMISrestful\CDMISrestful\DataMethod\PlanInfoMethod.cs:行号 2818
+2015/11/16 16:18:42	::1             	ERR	PlanInfoMethod.GetComplianceListInC                         	数据库操作异常！ error information : 索引超出范围。必须为非负值并小于集合大小。
+参数名: index
+   在 System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   在 System.Collections.Generic.List`1.get_Item(Int32 index)
+   在 CDMISrestful.DataMethod.PlanInfoMethod.GetComplianceListInC(DataConnection pclsCache, String PatientId, String StartDate, String EndDate, String Module) 位置 c:\Users\syf\Desktop\CDMISrestful\CDMISrestful\DataMethod\PlanInfoMethod.cs:行号 2818
+2015/11/16 16:22:16	::1             	ERR	PlanInfoMethod.GetComplianceListInC                         	数据库操作异常！ error information : 索引超出范围。必须为非负值并小于集合大小。
+参数名: index
+   在 System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   在 System.Collections.Generic.List`1.get_Item(Int32 index)
+   在 CDMISrestful.DataMethod.PlanInfoMethod.GetComplianceListInC(DataConnection pclsCache, String PatientId, String StartDate, String EndDate, String Module) 位置 c:\Users\syf\Desktop\CDMISrestful\CDMISrestful\DataMethod\PlanInfoMethod.cs:行号 2818
+2015/11/16 16:34:57	::1             	ERR	PlanInfoMethod.GetComplianceListInC                         	数据库操作异常！ error information : 索引超出范围。必须为非负值并小于集合大小。
+参数名: index
+   在 System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   在 System.Collections.Generic.List`1.get_Item(Int32 index)
+   在 CDMISrestful.DataMethod.PlanInfoMethod.GetComplianceListInC(DataConnection pclsCache, String PatientId, String StartDate, String EndDate, String Module) 位置 c:\Users\syf\Desktop\CDMISrestful\CDMISrestful\DataMethod\PlanInfoMethod.cs:行号 2818
+2015/11/16 16:40:23	::1             	ERR	PlanInfoMethod.GetComplianceListInC                         	数据库操作异常！ error information : 索引超出范围。必须为非负值并小于集合大小。
+参数名: index
+   在 System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   在 System.Collections.Generic.List`1.get_Item(Int32 index)
+   在 CDMISrestful.DataMethod.PlanInfoMethod.GetComplianceListInC(DataConnection pclsCache, String PatientId, String StartDate, String EndDate, String Module) 位置 c:\Users\syf\Desktop\CDMISrestful\CDMISrestful\DataMethod\PlanInfoMethod.cs:行号 2818
+2015/11/16 16:49:22	::1             	ERR	PlanInfoMethod.GetComplianceListInC                         	数据库操作异常！ error information : 索引超出范围。必须为非负值并小于集合大小。
+参数名: index
+   在 System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   在 System.Collections.Generic.List`1.get_Item(Int32 index)
+   在 CDMISrestful.DataMethod.PlanInfoMethod.GetComplianceListInC(DataConnection pclsCache, String PatientId, String StartDate, String EndDate, String Module)
+2015/11/16 16:50:00	::1             	ERR	PlanInfoMethod.GetComplianceListInC                         	数据库操作异常！ error information : 索引超出范围。必须为非负值并小于集合大小。
+参数名: index
+   在 System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   在 System.Collections.Generic.List`1.get_Item(Int32 index)
+   在 CDMISrestful.DataMethod.PlanInfoMethod.GetComplianceListInC(DataConnection pclsCache, String PatientId, String StartDate, String EndDate, String Module)
+2015/11/16 16:53:04	::1             	ERR	PlanInfoMethod.GetComplianceListInC                         	数据库操作异常！ error information : 索引超出范围。必须为非负值并小于集合大小。
+参数名: index
+   在 System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   在 System.Collections.Generic.List`1.get_Item(Int32 index)
+   在 CDMISrestful.DataMethod.PlanInfoMethod.GetComplianceListInC(DataConnection pclsCache, String PatientId, String StartDate, String EndDate, String Module)
+2015/11/16 20:29:18	::1             	ERR	DictMethod.GetDescription                                   	数据库操作异常！ error information : 未将对象引用设置到对象的实例。
+   在 CDMISrestful.DataMethod.DictMethod.GetBPDescription(DataConnection pclsCache, Int32 SBP) 位置 c:\Users\syf\Desktop\CDMISrestful\CDMISrestful\DataMethod\DictMethod.cs:行号 624
+2015/11/16 22:06:50	::1             	ERR	UsersMethod.GetDoctorInfo                                   	数据库操作异常！ error information : 值不能为 null。
+参数名: value
+   在 System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   在 System.Double.Parse(String s)
+   在 CDMISrestful.DataMethod.UsersMethod.GetHealthCoachInfo(DataConnection pclsCache, String HealthCoachID) 位置 c:\Users\syf\Desktop\CDMISrestful\CDMISrestful\DataMethod\UsersMethod.cs:行号 1125
+2015/11/16 22:22:40	::1             	ERR	UsersMethod.GetDoctorInfo                                   	数据库操作异常！ error information : 值不能为 null。
+参数名: value
+   在 System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   在 System.Double.Parse(String s)
+   在 CDMISrestful.DataMethod.UsersMethod.GetHealthCoachInfo(DataConnection pclsCache, String HealthCoachID) 位置 c:\Users\syf\Desktop\CDMISrestful\CDMISrestful\DataMethod\UsersMethod.cs:行号 1125

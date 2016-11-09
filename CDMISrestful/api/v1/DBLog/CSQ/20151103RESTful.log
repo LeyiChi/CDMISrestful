@@ -1,0 +1,4 @@
+2015/11/03 09:39:05	::1             	ERR	PlanInfoMethod.GetPatientsPlan                              	数据库操作异常！ error information : 对象不能从 DBNull 转换为其他类型。
+   在 System.DBNull.System.IConvertible.ToDouble(IFormatProvider provider)
+   在 System.Convert.ToDouble(Object value)
+   在 CDMISrestful.DataMethod.PlanInfoMethod.GetPatientsPlan(DataConnection pclsCache, String DoctorId, String Module, String VitalType, String VitalCode) 位置 f:\Work\chronic disease management\github\CDMISrestful\CDMISrestful\DataMethod\PlanInfoMethod.cs:行号 2867

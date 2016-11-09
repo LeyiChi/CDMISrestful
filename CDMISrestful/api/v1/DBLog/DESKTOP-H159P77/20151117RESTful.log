@@ -1,0 +1,10 @@
+2015/11/17 10:20:04	::1             	ERR	UserMethod.ReserveHealthCoach                               	数据库操作异常！ error information : CacheDateTime overflow. Must be between 12/31/1840 12:00:00 AM and 12/31/9999 11:59:59 PM.
+   在 InterSystems.Data.CacheTypes.CacheDateTime..ctor(DateTime p_value)
+   在 InterSystems.Data.CacheClient.ObjBind.IO.MsgWriter.PutNext(Nullable`1 val)
+   在 InterSystems.Data.CacheTypes.CacheTimestampArgument.PutNext(MsgWriter writer)
+   在 InterSystems.Data.CacheClient.CacheConnection.PutMtdSignature(CacheMethodSignature s)
+   在 InterSystems.Data.CacheClient.CacheConnection.MsgRunMethod(Int64 oref, String clsName, String mtdName, CacheMethodSignature s)
+   在 InterSystems.Data.CacheClient.CacheConnection.RunClassMethod(String clsName, String mtdName, CacheMethodSignature s)
+   在 InterSystems.Data.CacheTypes.CacheObject.RunClassMethodS(CacheConnection conn, String clsName, String mtdName, CacheMethodSignature s)
+   在 Ps.Appointment.SetData(CacheConnection conn, String DoctorId, String PatientId, String Module, String Description, Nullable`1 Status, Nullable`1 ApplicationTime, Nullable`1 AppointmentTime, String AppointmentAdd, String Redundancy, String revUserId, String TerminalName, String TerminalIP, Nullable`1 DeviceType)
+   在 CDMISrestful.DataMethod.UsersMethod.ReserveHealthCoach(DataConnection pclsCache, String DoctorId, String PatientId, String Module, String Description, Int32 Status, DateTime ApplicationTime, DateTime AppointmentTime, String AppointmentAdd, String Redundancy, String revUserId, String TerminalName, String TerminalIP, Int32 DeviceType) 位置 c:\Users\syf\Desktop\CDMISrestful\CDMISrestful\DataMethod\UsersMethod.cs:行号 1211

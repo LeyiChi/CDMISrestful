@@ -1,0 +1,36 @@
+2015/11/09 19:42:48	::1             	ERR	UsersMethod.GetModulesByPID                                 	数据库操作异常！ error information : [SQLCODE: <-428>:<Stored procedure not found>]
+[Location: <SPPrepare>]
+[%msg: <Procedure named PS.BASICINFODETAIL_GETHMODULESBYPID does not exist>]
+   在 InterSystems.Data.CacheClient.CacheCommand.ExecuteReaderObject(CommandBehavior behavior, String method)
+   在 InterSystems.Data.CacheClient.CacheCommand.ExecuteReader()
+   在 CDMISrestful.DataMethod.UsersMethod.GetHModulesByPID(DataConnection pclsCache, String PatientId) 位置 f:\Work\chronic disease management\github\CDMISrestful\CDMISrestful\DataMethod\UsersMethod.cs:行号 1659
+2015/11/09 20:08:14	::1             	ERR	UsersMethod.GetModulesByPID                                 	数据库操作异常！ error information : [SQLCODE: <-428>:<Stored procedure not found>]
+[Location: <SPPrepare>]
+[%msg: <Procedure named PS.BASICINFODETAIL_GETHMODULESBYPID does not exist>]
+   在 InterSystems.Data.CacheClient.CacheCommand.ExecuteReaderObject(CommandBehavior behavior, String method)
+   在 InterSystems.Data.CacheClient.CacheCommand.ExecuteReader()
+   在 CDMISrestful.DataMethod.UsersMethod.GetHModulesByPID(DataConnection pclsCache, String PatientId) 位置 f:\Work\chronic disease management\github\CDMISrestful\CDMISrestful\DataMethod\UsersMethod.cs:行号 1659
+2015/11/09 20:09:27	::1             	ERR	UsersMethod.GetModulesByPID                                 	数据库操作异常！ error information : [SQLCODE: <-428>:<Stored procedure not found>]
+[Location: <SPPrepare>]
+[%msg: <Procedure named PS.BASICINFODETAIL_GETHMODULESBYPID does not exist>]
+   在 InterSystems.Data.CacheClient.CacheCommand.ExecuteReaderObject(CommandBehavior behavior, String method)
+   在 InterSystems.Data.CacheClient.CacheCommand.ExecuteReader()
+   在 CDMISrestful.DataMethod.UsersMethod.GetHModulesByPID(DataConnection pclsCache, String PatientId) 位置 f:\Work\chronic disease management\github\CDMISrestful\CDMISrestful\DataMethod\UsersMethod.cs:行号 1659
+2015/11/09 20:09:39	::1             	ERR	UsersMethod.GetModulesByPID                                 	数据库操作异常！ error information : [SQLCODE: <-428>:<Stored procedure not found>]
+[Location: <SPPrepare>]
+[%msg: <Procedure named PS.BASICINFODETAIL_GETHMODULESBYPID does not exist>]
+   在 InterSystems.Data.CacheClient.CacheCommand.ExecuteReaderObject(CommandBehavior behavior, String method)
+   在 InterSystems.Data.CacheClient.CacheCommand.ExecuteReader()
+   在 CDMISrestful.DataMethod.UsersMethod.GetHModulesByPID(DataConnection pclsCache, String PatientId) 位置 f:\Work\chronic disease management\github\CDMISrestful\CDMISrestful\DataMethod\UsersMethod.cs:行号 1659
+2015/11/09 20:09:59	::1             	ERR	UsersMethod.GetModulesByPID                                 	数据库操作异常！ error information : [SQLCODE: <-428>:<Stored procedure not found>]
+[Location: <SPPrepare>]
+[%msg: <Procedure named PS.BASICINFODETAIL_GETHMODULESBYPID does not exist>]
+   在 InterSystems.Data.CacheClient.CacheCommand.ExecuteReaderObject(CommandBehavior behavior, String method)
+   在 InterSystems.Data.CacheClient.CacheCommand.ExecuteReader()
+   在 CDMISrestful.DataMethod.UsersMethod.GetHModulesByPID(DataConnection pclsCache, String PatientId) 位置 f:\Work\chronic disease management\github\CDMISrestful\CDMISrestful\DataMethod\UsersMethod.cs:行号 1659
+2015/11/09 20:16:11	::1             	ERR	UsersMethod.GetModulesByPID                                 	数据库操作异常！ error information : [SQLCODE: <-428>:<Stored procedure not found>]
+[Location: <SPPrepare>]
+[%msg: <Procedure named PS.BASICINFODETAIL_GETHMODULESBYPID does not exist>]
+   在 InterSystems.Data.CacheClient.CacheCommand.ExecuteReaderObject(CommandBehavior behavior, String method)
+   在 InterSystems.Data.CacheClient.CacheCommand.ExecuteReader()
+   在 CDMISrestful.DataMethod.UsersMethod.GetHModulesByPID(DataConnection pclsCache, String PatientId) 位置 f:\Work\chronic disease management\github\CDMISrestful\CDMISrestful\DataMethod\UsersMethod.cs:行号 1659

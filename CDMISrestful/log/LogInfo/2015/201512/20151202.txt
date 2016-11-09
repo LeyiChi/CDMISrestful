@@ -1,0 +1,208 @@
+
+ 
+记录时间：2015-12-02 18:11:04,017 
+线程ID:[6] 
+日志级别：  INFO  
+日志描述：
+            Action执行时间监控：
+            ControllerName：UsersController
+            ActionName:GetAppoitmentPatientList
+            开始时间：2015/12/2 18:10:59
+            结束时间：2015/12/2 18:11:04
+            总 时 间：4.2904487秒
+            Action参数：healthCoachID=DOC201506180002&Status=1
+            Http请求头:Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN, zh; q=0.8
+Cookie: ASP.NET_SessionId=ebeie3iqzvg5kila4kqfvmfg; .ASPXAUTH=6DB73BE46B45A220D6FCFBCD79676F63E696BD8FB48C601711E201C7CE8BE7677240010B316030235FFACD5AC880944D20B080BBBC071A25991DED783771CB9774ACEC88402FFB2B672A40C02EA1F9701E4391368292CE58901733985A4BA9681E4D57B8B3595B142BABD0F8208254A60EFACC4DFA1B58BFFD7936523936221E98435F260942CE2E348E5EB99C0241F6A55134190856922A423BF5A39BDE66BA
+Host: localhost:7516
+Referer: http://localhost:7516/Help/Api/GET-Api-v1-Users-GetAppoitmentPatientList_healthCoachID_Status
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2427.7 Safari/537.36
+
+            客户端IP：::1,
+            HttpMethod:GET
+                    
+ 
+
+ 
+记录时间：2015-12-02 18:12:28,230 
+线程ID:[5] 
+日志级别：  INFO  
+日志描述：
+            Action执行时间监控：
+            ControllerName：UsersController
+            ActionName:GetAppoitmentPatientList
+            开始时间：2015/12/2 18:11:26
+            结束时间：2015/12/2 18:12:28
+            总 时 间：61.8356407秒
+            Action参数：healthCoachID=DOC201506180002&Status=1
+            Http请求头:Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN, zh; q=0.8
+Cookie: ASP.NET_SessionId=ebeie3iqzvg5kila4kqfvmfg; .ASPXAUTH=6DB73BE46B45A220D6FCFBCD79676F63E696BD8FB48C601711E201C7CE8BE7677240010B316030235FFACD5AC880944D20B080BBBC071A25991DED783771CB9774ACEC88402FFB2B672A40C02EA1F9701E4391368292CE58901733985A4BA9681E4D57B8B3595B142BABD0F8208254A60EFACC4DFA1B58BFFD7936523936221E98435F260942CE2E348E5EB99C0241F6A55134190856922A423BF5A39BDE66BA
+Host: localhost:7516
+Referer: http://localhost:7516/Help/Api/GET-Api-v1-Users-GetAppoitmentPatientList_healthCoachID_Status
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2427.7 Safari/537.36
+
+            客户端IP：::1,
+            HttpMethod:GET
+                    
+ 
+
+ 
+记录时间：2015-12-02 18:19:08,429 
+线程ID:[108] 
+日志级别：  INFO  
+日志描述：
+            Action执行时间监控：
+            ControllerName：UsersController
+            ActionName:GetAppoitmentPatientList
+            开始时间：2015/12/2 18:14:38
+            结束时间：2015/12/2 18:19:08
+            总 时 间：270.1869846秒
+            Action参数：healthCoachID=DOC201506180002&Status=1
+            Http请求头:Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN, zh; q=0.8
+Cookie: ASP.NET_SessionId=ebeie3iqzvg5kila4kqfvmfg; .ASPXAUTH=6DB73BE46B45A220D6FCFBCD79676F63E696BD8FB48C601711E201C7CE8BE7677240010B316030235FFACD5AC880944D20B080BBBC071A25991DED783771CB9774ACEC88402FFB2B672A40C02EA1F9701E4391368292CE58901733985A4BA9681E4D57B8B3595B142BABD0F8208254A60EFACC4DFA1B58BFFD7936523936221E98435F260942CE2E348E5EB99C0241F6A55134190856922A423BF5A39BDE66BA
+Host: localhost:7516
+Referer: http://localhost:7516/Help/Api/GET-Api-v1-Users-GetAppoitmentPatientList_healthCoachID_Status
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2427.7 Safari/537.36
+
+            客户端IP：::1,
+            HttpMethod:GET
+                    
+ 
+
+ 
+记录时间：2015-12-02 18:20:01,364 
+线程ID:[7] 
+日志级别：  INFO  
+日志描述：
+            Action执行时间监控：
+            ControllerName：UsersController
+            ActionName:GetAppoitmentPatientList
+            开始时间：2015/12/2 18:19:57
+            结束时间：2015/12/2 18:20:01
+            总 时 间：3.4502853秒
+            Action参数：healthCoachID=DOC201506180002&Status=1
+            Http请求头:Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN, zh; q=0.8
+Cookie: ASP.NET_SessionId=ebeie3iqzvg5kila4kqfvmfg; .ASPXAUTH=6DB73BE46B45A220D6FCFBCD79676F63E696BD8FB48C601711E201C7CE8BE7677240010B316030235FFACD5AC880944D20B080BBBC071A25991DED783771CB9774ACEC88402FFB2B672A40C02EA1F9701E4391368292CE58901733985A4BA9681E4D57B8B3595B142BABD0F8208254A60EFACC4DFA1B58BFFD7936523936221E98435F260942CE2E348E5EB99C0241F6A55134190856922A423BF5A39BDE66BA
+Host: localhost:7516
+Referer: http://localhost:7516/Help/Api/GET-Api-v1-Users-GetAppoitmentPatientList_healthCoachID_Status
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2427.7 Safari/537.36
+
+            客户端IP：::1,
+            HttpMethod:GET
+                    
+ 
+
+ 
+记录时间：2015-12-02 18:20:40,354 
+线程ID:[173] 
+日志级别：  INFO  
+日志描述：
+            Action执行时间监控：
+            ControllerName：UsersController
+            ActionName:GetAppoitmentPatientList
+            开始时间：2015/12/2 18:20:37
+            结束时间：2015/12/2 18:20:40
+            总 时 间：2.8339911秒
+            Action参数：healthCoachID=DOC201506180002&Status=4
+            Http请求头:Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN, zh; q=0.8
+Cookie: ASP.NET_SessionId=ebeie3iqzvg5kila4kqfvmfg; .ASPXAUTH=6DB73BE46B45A220D6FCFBCD79676F63E696BD8FB48C601711E201C7CE8BE7677240010B316030235FFACD5AC880944D20B080BBBC071A25991DED783771CB9774ACEC88402FFB2B672A40C02EA1F9701E4391368292CE58901733985A4BA9681E4D57B8B3595B142BABD0F8208254A60EFACC4DFA1B58BFFD7936523936221E98435F260942CE2E348E5EB99C0241F6A55134190856922A423BF5A39BDE66BA
+Host: localhost:7516
+Referer: http://localhost:7516/Help/Api/GET-Api-v1-Users-GetAppoitmentPatientList_healthCoachID_Status
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2427.7 Safari/537.36
+
+            客户端IP：::1,
+            HttpMethod:GET
+                    
+ 
+
+ 
+记录时间：2015-12-02 18:24:33,024 
+线程ID:[6] 
+日志级别：  INFO  
+日志描述：
+            Action执行时间监控：
+            ControllerName：UsersController
+            ActionName:GetAppoitmentPatientList
+            开始时间：2015/12/2 18:24:12
+            结束时间：2015/12/2 18:24:33
+            总 时 间：20.2548241秒
+            Action参数：healthCoachID=DOC201506180002&Status=4
+            Http请求头:Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN, zh; q=0.8
+Cookie: ASP.NET_SessionId=ebeie3iqzvg5kila4kqfvmfg; .ASPXAUTH=6DB73BE46B45A220D6FCFBCD79676F63E696BD8FB48C601711E201C7CE8BE7677240010B316030235FFACD5AC880944D20B080BBBC071A25991DED783771CB9774ACEC88402FFB2B672A40C02EA1F9701E4391368292CE58901733985A4BA9681E4D57B8B3595B142BABD0F8208254A60EFACC4DFA1B58BFFD7936523936221E98435F260942CE2E348E5EB99C0241F6A55134190856922A423BF5A39BDE66BA
+Host: localhost:7516
+Referer: http://localhost:7516/Help/Api/GET-Api-v1-Users-GetAppoitmentPatientList_healthCoachID_Status
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2427.7 Safari/537.36
+
+            客户端IP：::1,
+            HttpMethod:GET
+                    
+ 
+
+ 
+记录时间：2015-12-02 18:25:07,241 
+线程ID:[6] 
+日志级别：  INFO  
+日志描述：
+            Action执行时间监控：
+            ControllerName：UsersController
+            ActionName:GetAppoitmentPatientList
+            开始时间：2015/12/2 18:24:39
+            结束时间：2015/12/2 18:25:07
+            总 时 间：27.7002247秒
+            Action参数：healthCoachID=DOC201506180002&Status=4
+            Http请求头:Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN, zh; q=0.8
+Cookie: ASP.NET_SessionId=ebeie3iqzvg5kila4kqfvmfg; .ASPXAUTH=6DB73BE46B45A220D6FCFBCD79676F63E696BD8FB48C601711E201C7CE8BE7677240010B316030235FFACD5AC880944D20B080BBBC071A25991DED783771CB9774ACEC88402FFB2B672A40C02EA1F9701E4391368292CE58901733985A4BA9681E4D57B8B3595B142BABD0F8208254A60EFACC4DFA1B58BFFD7936523936221E98435F260942CE2E348E5EB99C0241F6A55134190856922A423BF5A39BDE66BA
+Host: localhost:7516
+Referer: http://localhost:7516/Help/Api/GET-Api-v1-Users-GetAppoitmentPatientList_healthCoachID_Status
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2427.7 Safari/537.36
+
+            客户端IP：::1,
+            HttpMethod:GET
+                    
+ 
+
+ 
+记录时间：2015-12-02 18:27:44,663 
+线程ID:[6] 
+日志级别：  INFO  
+日志描述：
+            Action执行时间监控：
+            ControllerName：UsersController
+            ActionName:GetAppoitmentPatientList
+            开始时间：2015/12/2 18:27:38
+            结束时间：2015/12/2 18:27:44
+            总 时 间：6.342274秒
+            Action参数：healthCoachID=DOC201506180002&Status={Status}
+            Http请求头:Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN, zh; q=0.8
+Cookie: ASP.NET_SessionId=ebeie3iqzvg5kila4kqfvmfg; .ASPXAUTH=6DB73BE46B45A220D6FCFBCD79676F63E696BD8FB48C601711E201C7CE8BE7677240010B316030235FFACD5AC880944D20B080BBBC071A25991DED783771CB9774ACEC88402FFB2B672A40C02EA1F9701E4391368292CE58901733985A4BA9681E4D57B8B3595B142BABD0F8208254A60EFACC4DFA1B58BFFD7936523936221E98435F260942CE2E348E5EB99C0241F6A55134190856922A423BF5A39BDE66BA
+Host: localhost:7516
+Referer: http://localhost:7516/Help/Api/GET-Api-v1-Users-GetAppoitmentPatientList_healthCoachID_Status
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2427.7 Safari/537.36
+
+            客户端IP：::1,
+            HttpMethod:GET
+                    
+ 

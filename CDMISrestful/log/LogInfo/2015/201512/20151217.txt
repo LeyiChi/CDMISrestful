@@ -1,0 +1,104 @@
+
+ 
+记录时间：2015-12-17 15:22:45,730 
+线程ID:[7] 
+日志级别：  INFO  
+日志描述：
+            Action执行时间监控：
+            ControllerName：UsersController
+            ActionName:GetHealthCoachListByPatient
+            开始时间：2015/12/17 15:22:38
+            结束时间：2015/12/17 15:22:45
+            总 时 间：6.8106814秒
+            Action参数：PatientId=U201511120006
+            Http请求头:Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN, zh; q=0.8
+Cookie: ASP.NET_SessionId=5s0or0wrtyxd5qskgyxcbalh
+Host: localhost:7516
+Referer: http://localhost:7516/Help/Api/GET-Api-v1-Users-HealthCoaches_PatientId
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2427.7 Safari/537.36
+
+            客户端IP：::1,
+            HttpMethod:GET
+                    
+ 
+
+ 
+记录时间：2015-12-17 15:23:43,562 
+线程ID:[5] 
+日志级别：  INFO  
+日志描述：
+            Action执行时间监控：
+            ControllerName：UsersController
+            ActionName:GetHealthCoachListByPatient
+            开始时间：2015/12/17 15:22:53
+            结束时间：2015/12/17 15:23:43
+            总 时 间：49.6774773秒
+            Action参数：PatientId=U201511120006
+            Http请求头:Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN, zh; q=0.8
+Cookie: ASP.NET_SessionId=5s0or0wrtyxd5qskgyxcbalh
+Host: localhost:7516
+Referer: http://localhost:7516/Help/Api/GET-Api-v1-Users-HealthCoaches_PatientId
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2427.7 Safari/537.36
+
+            客户端IP：::1,
+            HttpMethod:GET
+                    
+ 
+
+ 
+记录时间：2015-12-17 15:27:26,690 
+线程ID:[5] 
+日志级别：  INFO  
+日志描述：
+            Action执行时间监控：
+            ControllerName：UsersController
+            ActionName:GetHealthCoachListByPatient
+            开始时间：2015/12/17 15:26:33
+            结束时间：2015/12/17 15:27:26
+            总 时 间：53.2521247秒
+            Action参数：PatientId=U201511170002
+            Http请求头:Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN, zh; q=0.8
+Cookie: ASP.NET_SessionId=5s0or0wrtyxd5qskgyxcbalh
+Host: localhost:7516
+Referer: http://localhost:7516/Help/Api/GET-Api-v1-Users-HealthCoaches_PatientId
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2427.7 Safari/537.36
+
+            客户端IP：::1,
+            HttpMethod:GET
+                    
+ 
+
+ 
+记录时间：2015-12-17 15:28:02,750 
+线程ID:[5] 
+日志级别：  INFO  
+日志描述：
+            Action执行时间监控：
+            ControllerName：UsersController
+            ActionName:GetHealthCoachListByPatient
+            开始时间：2015/12/17 15:27:30
+            结束时间：2015/12/17 15:28:02
+            总 时 间：32.1774381秒
+            Action参数：PatientId=U201511170002
+            Http请求头:Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN, zh; q=0.8
+Cookie: ASP.NET_SessionId=5s0or0wrtyxd5qskgyxcbalh
+Host: localhost:7516
+Referer: http://localhost:7516/Help/Api/GET-Api-v1-Users-HealthCoaches_PatientId
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2427.7 Safari/537.36
+
+            客户端IP：::1,
+            HttpMethod:GET
+                    
+ 

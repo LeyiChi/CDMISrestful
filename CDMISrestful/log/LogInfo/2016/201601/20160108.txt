@@ -1,0 +1,43 @@
+
+ 
+记录时间：2016-01-08 19:38:44,098 
+线程ID:[6] 
+日志级别：  INFO  
+日志描述：
+            Action执行时间监控：
+            ControllerName：UsersController
+            ActionName:PostConsultation
+            开始时间：2016/1/8 19:38:22
+            结束时间：2016/1/8 19:38:44
+            总 时 间：21.8959383秒
+            Action参数：Consultation=CDMISrestful.DataModels.Consultation&__EntityParamsList__={
+  "DoctorId": "sample string 1",
+  "PatientId": "sample string 2",
+  "ApplicationTime": "2016-01-08 08:00:00",
+  "HealthCoachId": "sample string 4",
+  "Module": "sample string 5",
+  "Title": "sample string 6",
+  "Description": "sample string 7",
+  "ConsultTime": "9999-12-31",
+  "Solution": "sample string 9",
+  "Emergency": 10,
+  "Status": 11,
+  "Redundancy": "sample string 12",
+  "revUserId": "sample string 13",
+  "TerminalName": "sample string 14",
+  "TerminalIP": "sample string 15",
+  "DeviceType": 16
+}
+            Http请求头:Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN, zh; q=0.8
+Host: localhost:7516
+Referer: http://localhost:7516/Help/Api/POST-Api-v1-Users-Consultation
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2427.7 Safari/537.36
+Origin: http://localhost:7516
+
+            客户端IP：::1,
+            HttpMethod:POST
+                    
+ 

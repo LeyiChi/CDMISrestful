@@ -1,0 +1,3494 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CDMISrestful</name>
+    </assembly>
+    <members>
+        <member name="M:CDMISrestful.Areas.HelpPage.ApiDescriptionExtensions.GetFriendlyId(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Generates an URI-friendly ID for the <see cref="T:System.Web.Http.Description.ApiDescription"/>. E.g. "Get-Values-id_name" instead of "GetValues/{id}?name={name}"
+            </summary>
+            <param name="description">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The ID as a string.</returns>
+        </member>
+        <member name="T:CDMISrestful.Areas.HelpPage.HelpPageConfig">
+            <summary>
+            Use this class to customize the Help Page.
+            For example you can set a custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> to supply the documentation
+            or you can provide the samples for the requests/responses.
+            </summary>
+        </member>
+        <member name="T:CDMISrestful.Areas.HelpPage.Controllers.HelpController">
+            <summary>
+            The controller that will handle requests for the help page.
+            </summary>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.HelpPageConfigurationExtensions.SetDocumentationProvider(System.Web.Http.HttpConfiguration,System.Web.Http.Description.IDocumentationProvider)">
+            <summary>
+            Sets the documentation provider for help page.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="documentationProvider">The documentation provider.</param>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleObjects(System.Web.Http.HttpConfiguration,System.Collections.Generic.IDictionary{System.Type,System.Object})">
+            <summary>
+            Sets the objects that will be used by the formatters to produce sample requests/responses.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleObjects">The sample objects.</param>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type and action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample request directly for the specified media type and action with parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type of the action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample response directly for the specified media type of the action with specific parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForMediaType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Sets the sample directly for all actions with the specified media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Sets the sample directly for all actions with the specified type and media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The parameter type or return type of an action.</param>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <returns>The help page sample generator.</returns>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.HelpPageConfigurationExtensions.SetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration,CDMISrestful.Areas.HelpPage.HelpPageSampleGenerator)">
+            <summary>
+            Sets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleGenerator">The help page sample generator.</param>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.HelpPageConfigurationExtensions.GetModelDescriptionGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the model description generator.
+            </summary>
+            <param name="config">The configuration.</param>
+            <returns>The <see cref="T:CDMISrestful.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator"/></returns>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageApiModel(System.Web.Http.HttpConfiguration,System.String)">
+            <summary>
+            Gets the model that represents an API displayed on the help page. The model is initialized on the first call and cached for subsequent calls.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="apiDescriptionId">The <see cref="T:System.Web.Http.Description.ApiDescription"/> ID.</param>
+            <returns>
+            An <see cref="T:CDMISrestful.Areas.HelpPage.Models.HelpPageApiModel"/>
+            </returns>
+        </member>
+        <member name="T:CDMISrestful.Areas.HelpPage.ModelDescriptions.ModelDescription">
+            <summary>
+            Describes a type model.
+            </summary>
+        </member>
+        <member name="T:CDMISrestful.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator">
+            <summary>
+            Generates model descriptions for given types.
+            </summary>
+        </member>
+        <member name="T:CDMISrestful.Areas.HelpPage.ModelDescriptions.ModelNameAttribute">
+            <summary>
+            Use this attribute to change the name of the <see cref="T:CDMISrestful.Areas.HelpPage.ModelDescriptions.ModelDescription"/> generated for a type.
+            </summary>
+        </member>
+        <member name="T:CDMISrestful.Areas.HelpPage.Models.HelpPageApiModel">
+            <summary>
+            The model that represents an API displayed on the help page.
+            </summary>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.Models.HelpPageApiModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:CDMISrestful.Areas.HelpPage.Models.HelpPageApiModel"/> class.
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription">
+            <summary>
+            Gets or sets the <see cref="P:CDMISrestful.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription"/> that describes the API.
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.Areas.HelpPage.Models.HelpPageApiModel.UriParameters">
+            <summary>
+            Gets or sets the <see cref="T:CDMISrestful.Areas.HelpPage.ModelDescriptions.ParameterDescription"/> collection that describes the URI parameters for the API.
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.Areas.HelpPage.Models.HelpPageApiModel.RequestDocumentation">
+            <summary>
+            Gets or sets the documentation for the request.
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.Areas.HelpPage.Models.HelpPageApiModel.RequestModelDescription">
+            <summary>
+            Gets or sets the <see cref="T:CDMISrestful.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the request body.
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.Areas.HelpPage.Models.HelpPageApiModel.RequestBodyParameters">
+            <summary>
+            Gets the request body parameter descriptions.
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.Areas.HelpPage.Models.HelpPageApiModel.ResourceDescription">
+            <summary>
+            Gets or sets the <see cref="T:CDMISrestful.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the resource.
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.Areas.HelpPage.Models.HelpPageApiModel.ResourceProperties">
+            <summary>
+            Gets the resource property descriptions.
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.Areas.HelpPage.Models.HelpPageApiModel.SampleRequests">
+            <summary>
+            Gets the sample requests associated with the API.
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.Areas.HelpPage.Models.HelpPageApiModel.SampleResponses">
+            <summary>
+            Gets the sample responses associated with the API.
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.Areas.HelpPage.Models.HelpPageApiModel.ErrorMessages">
+            <summary>
+            Gets the error messages associated with this model.
+            </summary>
+        </member>
+        <member name="T:CDMISrestful.Areas.HelpPage.HelpPageSampleGenerator">
+            <summary>
+            This class will generate the samples for the help page.
+            </summary>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.HelpPageSampleGenerator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:CDMISrestful.Areas.HelpPage.HelpPageSampleGenerator"/> class.
+            </summary>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.HelpPageSampleGenerator.GetSampleRequests(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the request body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.HelpPageSampleGenerator.GetSampleResponses(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the response body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.HelpPageSampleGenerator.GetSample(System.Web.Http.Description.ApiDescription,CDMISrestful.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Gets the request or response body samples.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.HelpPageSampleGenerator.GetActionSample(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Type,System.Net.Http.Formatting.MediaTypeFormatter,System.Net.Http.Headers.MediaTypeHeaderValue,CDMISrestful.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Search for samples that are provided directly through <see cref="P:CDMISrestful.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples"/>.
+            </summary>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="type">The CLR type.</param>
+            <param name="formatter">The formatter.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The sample that matches the parameters.</returns>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.HelpPageSampleGenerator.GetSampleObject(System.Type)">
+            <summary>
+            Gets the sample object that will be serialized by the formatters. 
+            First, it will look at the <see cref="P:CDMISrestful.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects"/>. If no sample object is found, it will try to create
+            one using <see cref="M:CDMISrestful.Areas.HelpPage.HelpPageSampleGenerator.DefaultSampleObjectFactory(CDMISrestful.Areas.HelpPage.HelpPageSampleGenerator,System.Type)"/> (which wraps an <see cref="T:CDMISrestful.Areas.HelpPage.ObjectGenerator"/>) and other
+            factories in <see cref="P:CDMISrestful.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The sample object.</returns>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.HelpPageSampleGenerator.ResolveHttpRequestMessageType(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Resolves the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The type.</returns>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.HelpPageSampleGenerator.ResolveType(System.Web.Http.Description.ApiDescription,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},CDMISrestful.Areas.HelpPage.SampleDirection,System.Collections.ObjectModel.Collection{System.Net.Http.Formatting.MediaTypeFormatter}@)">
+            <summary>
+            Resolves the type of the action parameter or return value when <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/> is used.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or a response.</param>
+            <param name="formatters">The formatters.</param>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.HelpPageSampleGenerator.WriteSampleObjectUsingFormatter(System.Net.Http.Formatting.MediaTypeFormatter,System.Object,System.Type,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Writes the sample object using formatter.
+            </summary>
+            <param name="formatter">The formatter.</param>
+            <param name="value">The value.</param>
+            <param name="type">The type.</param>
+            <param name="mediaType">Type of the media.</param>
+            <returns></returns>
+        </member>
+        <member name="P:CDMISrestful.Areas.HelpPage.HelpPageSampleGenerator.ActualHttpMessageTypes">
+            <summary>
+            Gets CLR types that are used as the content of <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/>.
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples">
+            <summary>
+            Gets the objects that are used directly as samples for certain actions.
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects">
+            <summary>
+            Gets the objects that are serialized as samples by the supported formatters.
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories">
+            <summary>
+            Gets factories for the objects that the supported formatters will serialize as samples. Processed in order,
+            stopping when the factory successfully returns a non-<see langref="null"/> object.
+            </summary>
+            <remarks>
+            Collection includes just <see cref="M:CDMISrestful.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)"/> initially. Use
+            <code>SampleObjectFactories.Insert(0, func)</code> to provide an override and
+            <code>SampleObjectFactories.Add(func)</code> to provide a fallback.</remarks>
+        </member>
+        <member name="T:CDMISrestful.Areas.HelpPage.HelpPageSampleKey">
+            <summary>
+            This is used to identify the place where the sample should be applied.
+            </summary>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Creates a new <see cref="T:CDMISrestful.Areas.HelpPage.HelpPageSampleKey"/> based on media type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Creates a new <see cref="T:CDMISrestful.Areas.HelpPage.HelpPageSampleKey"/> based on media type and CLR type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The CLR type.</param>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.HelpPageSampleKey.#ctor(CDMISrestful.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:CDMISrestful.Areas.HelpPage.HelpPageSampleKey"/> based on <see cref="P:CDMISrestful.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="sampleDirection">The <see cref="P:CDMISrestful.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,CDMISrestful.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:CDMISrestful.Areas.HelpPage.HelpPageSampleKey"/> based on media type, <see cref="P:CDMISrestful.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The <see cref="P:CDMISrestful.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="P:CDMISrestful.Areas.HelpPage.HelpPageSampleKey.ControllerName">
+            <summary>
+            Gets the name of the controller.
+            </summary>
+            <value>
+            The name of the controller.
+            </value>
+        </member>
+        <member name="P:CDMISrestful.Areas.HelpPage.HelpPageSampleKey.ActionName">
+            <summary>
+            Gets the name of the action.
+            </summary>
+            <value>
+            The name of the action.
+            </value>
+        </member>
+        <member name="P:CDMISrestful.Areas.HelpPage.HelpPageSampleKey.MediaType">
+            <summary>
+            Gets the media type.
+            </summary>
+            <value>
+            The media type.
+            </value>
+        </member>
+        <member name="P:CDMISrestful.Areas.HelpPage.HelpPageSampleKey.ParameterNames">
+            <summary>
+            Gets the parameter names.
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.Areas.HelpPage.HelpPageSampleKey.SampleDirection">
+            <summary>
+            Gets the <see cref="P:CDMISrestful.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.
+            </summary>
+        </member>
+        <member name="T:CDMISrestful.Areas.HelpPage.ImageSample">
+            <summary>
+            This represents an image sample on the help page. There's a display template named ImageSample associated with this class.
+            </summary>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.ImageSample.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CDMISrestful.Areas.HelpPage.ImageSample"/> class.
+            </summary>
+            <param name="src">The URL of an image.</param>
+        </member>
+        <member name="T:CDMISrestful.Areas.HelpPage.InvalidSample">
+            <summary>
+            This represents an invalid sample on the help page. There's a display template named InvalidSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:CDMISrestful.Areas.HelpPage.ObjectGenerator">
+            <summary>
+            This class will create an object of a given type and populate it with sample data.
+            </summary>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)">
+            <summary>
+            Generates an object for a given type. The type needs to be public, have a public default constructor and settable public properties/fields. Currently it supports the following types:
+            Simple types: <see cref="T:System.Int32"/>, <see cref="T:System.String"/>, <see cref="T:System.Enum"/>, <see cref="T:System.DateTime"/>, <see cref="T:System.Uri"/>, etc.
+            Complex types: POCO types.
+            Nullables: <see cref="T:System.Nullable`1"/>.
+            Arrays: arrays of simple types or complex types.
+            Key value pairs: <see cref="T:System.Collections.Generic.KeyValuePair`2"/>
+            Tuples: <see cref="T:System.Tuple`1"/>, <see cref="T:System.Tuple`2"/>, etc
+            Dictionaries: <see cref="T:System.Collections.Generic.IDictionary`2"/> or anything deriving from <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            Collections: <see cref="T:System.Collections.Generic.IList`1"/>, <see cref="T:System.Collections.Generic.IEnumerable`1"/>, <see cref="T:System.Collections.Generic.ICollection`1"/>, <see cref="T:System.Collections.IList"/>, <see cref="T:System.Collections.IEnumerable"/>, <see cref="T:System.Collections.ICollection"/> or anything deriving from <see cref="T:System.Collections.Generic.ICollection`1"/> or <see cref="T:System.Collections.IList"/>.
+            Queryables: <see cref="T:System.Linq.IQueryable"/>, <see cref="T:System.Linq.IQueryable`1"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>An object of the given type.</returns>
+        </member>
+        <member name="T:CDMISrestful.Areas.HelpPage.SampleDirection">
+            <summary>
+            Indicates whether the sample is used for request or response
+            </summary>
+        </member>
+        <member name="T:CDMISrestful.Areas.HelpPage.TextSample">
+            <summary>
+            This represents a preformatted text sample on the help page. There's a display template named TextSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:CDMISrestful.Areas.HelpPage.XmlDocumentationProvider">
+            <summary>
+            A custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> that reads the API documentation from an XML documentation file.
+            </summary>
+        </member>
+        <member name="M:CDMISrestful.Areas.HelpPage.XmlDocumentationProvider.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CDMISrestful.Areas.HelpPage.XmlDocumentationProvider"/> class.
+            </summary>
+            <param name="documentPath">The physical path to XML document.</param>
+        </member>
+        <member name="M:CDMISrestful.CommonLibrary.CommonFunction.TransTime(System.String)">
+            <summary>
+            时间格式转换 GL 2015-10-10
+            </summary>
+            <param name="time"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.CommonLibrary.CommonFunction.getRemoteIPAddress">
+            <summary>
+            获取远程调用的IP CSQ 20151026
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.CommonLibrary.HygeiaComUtility.WriteClientLog(CDMISrestful.CommonLibrary.HygeiaEnum.LogType,System.String,System.String)">
+            <summary>
+            Writes the system log.
+            </summary>
+            <param name="logType">Type of the log.</param>
+            <param name="logSource">The log source.</param>
+            <param name="logMessage">The log message.</param>
+        </member>
+        <member name="M:CDMISrestful.CommonLibrary.HygeiaComUtility.GetTerminalID">
+            <summary>
+            Gets the terminal ID.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.CommonLibrary.HygeiaComUtility.GetTerminalIP">
+            <summary>
+            Gets the terminal IP.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.CommonLibrary.HygeiaComUtility.ChgDateFormat(System.String)">
+            <summary>
+            Changes the date format.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.CommonLibrary.HygeiaComUtility.ChgTimeFormat(System.String)">
+            <summary>
+            Changes the time format.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.CommonLibrary.HygeiaComUtility.GetStartupPath">
+            <summary>
+            Gets the startup path.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.CommonLibrary.HygeiaComUtility.SetSpace(System.String,System.Int32)">
+            <summary>
+            Sets the space.
+            </summary>
+            <param name="str">The STR.</param>
+            <param name="iMax">The i max.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.CommonLibrary.HygeiaConst.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="T:CDMISrestful.CommonLibrary.RESTAuthorizeAttribute">
+            <summary>
+            Token-based authentication for ASP .NET MVC REST web services.
+            Copyright (c) 2015 Kory Becker
+            http://primaryobjects.com/kory-becker
+            License MIT
+            </summary>
+        </member>
+        <member name="T:CDMISrestful.CommonLibrary.SecurityManager">
+            <summary>
+            Token-based authentication for ASP .NET MVC REST web services.
+            Copyright (c) 2015 Kory Becker
+            http://primaryobjects.com/kory-becker
+            License MIT
+            </summary>
+        </member>
+        <member name="M:CDMISrestful.CommonLibrary.SecurityManager.GenerateToken(System.String,System.String,System.String,System.String)">
+            <summary>
+            Generates a token to be used in API calls.
+            The token is generated by hashing a message with a key, using HMAC SHA256.
+            The message is: username:ip:userAgent:timeStamp
+            The key is: password:ip:salt
+            The resulting token is then concatenated with username:timeStamp and the result base64 encoded.
+            
+            API calls may then be validated by:
+            1. Base64 decode the string, obtaining the token, username, and timeStamp.
+            2. Ensure the timestamp is not expired.
+            2. Lookup the user's password from the db (cached).
+            3. Hash the username:ip:userAgent:timeStamp with the key of password:salt to compute a token.
+            4. Compare the computed token with the one supplied and ensure they match.
+            </summary>
+            下面函数用来产生token，输入可以放你关心的，我们可以放username,role和password来计算token，这里的demo用的输入比较多，但是实现起来都一样
+            有一个不足：没有验证客户端传过来的参数是不是合法，即传过来一个用户名，我要检查它是不是已经在我服务端数据库注册过了
+        </member>
+        <member name="M:CDMISrestful.CommonLibrary.SecurityManager.GetHashedPassword(System.String)">
+            <summary>
+            Returns a hashed password + salt, to be used in generating a token.
+            </summary>
+            <param name="password">string - user's password</param>
+            <returns>string - hashed password</returns>
+        </member>
+        <member name="M:CDMISrestful.CommonLibrary.SecurityManager.IsTokenValid(System.String)">
+            <summary>
+            Checks if a token is valid.
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.CommonLibrary.TextLog.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="F:CDMISrestful.CommonLibrary.TextLog.logQueue">
+            <summary>
+            Log出力文字列格納用
+            </summary>
+        </member>
+        <member name="F:CDMISrestful.CommonLibrary.TextLog.logWriting">
+            <summary>
+            Log出力中判定フラグ
+            </summary>
+        </member>
+        <member name="M:CDMISrestful.CommonLibrary.TextLog.WriteQueueToFile">
+            <summary>
+            QueueからFileへLog出力
+            </summary>
+        </member>
+        <member name="M:CDMISrestful.CommonLibrary.TextLog.GetLogFileFullPath">
+            <summary>
+            Logファイルのフルパスを取得
+            </summary>
+            <returns>Logファイルのフルパス</returns>
+        </member>
+        <member name="M:CDMISrestful.CommonLibrary.TextLog.Initialize(System.String,System.String)">
+            <summary>
+            Log出力関数の初期化
+            </summary>
+            <param name="logDirectory">ログ出力先ディレクトリ</param>
+            <param name="baseName">Logファイルのベースネーム</param>
+        </member>
+        <member name="M:CDMISrestful.CommonLibrary.TextLog.Initialize(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Log出力関数の初期化(オーバーロード+1)
+            </summary>
+            <param name="logDirectory">ログ出力先ディレクトリ</param>
+            <param name="baseName">Logファイルのベースネーム</param>
+            <param name="retry">リトライ回数</param>
+            <param name="saveDays">ログ保存期間</param>
+        </member>
+        <member name="M:CDMISrestful.CommonLibrary.TextLog.WriteLog(System.String)">
+            <summary>
+            Log出力
+            </summary>
+            <param name="log">出力するLog</param>
+        </member>
+        <member name="M:CDMISrestful.CommonLibrary.TextLog.FlushLog">
+            <summary>
+            溜まっているLogを全て出力
+            </summary>
+        </member>
+        <member name="M:CDMISrestful.CommonLibrary.TextLog.DeleteLog">
+            <summary>
+            Logファイルの削除
+            </summary>
+        </member>
+        <member name="M:CDMISrestful.CommonLibrary.TextLog.DeleteLog(System.Boolean)">
+            <summary>
+            Logファイルの削除(オーバーロード+1)
+            </summary>
+            <param name="allLogs">全てのログの削除判定 true:全て / false:BaseNameが一致するもののみ</param>
+        </member>
+        <member name="T:CDMISrestful.CommonLibrary.WebApiMonitorLog">
+            <summary>
+            监控日志对象
+            </summary>
+        </member>
+        <member name="M:CDMISrestful.CommonLibrary.WebApiMonitorLog.GetLoginfo">
+            <summary>
+            获取监控指标日志
+            </summary>
+            <param name="mtype"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.CommonLibrary.WebApiMonitorLog.GetCollections(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            获取Action 参数
+            </summary>
+            <param name="Collections"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.CommonLibrary.WebApiMonitorLog.GetIP">
+            <summary>
+            获取IP
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:CDMISrestful.CommonLibrary.WebApiMonitorLog.ActionParams">
+            <summary>
+            请求的Action 参数
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.CommonLibrary.WebApiMonitorLog.HttpRequestHeaders">
+            <summary>
+            Http请求头
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.CommonLibrary.WebApiMonitorLog.HttpMethod">
+            <summary>
+            请求方式
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.CommonLibrary.WebApiMonitorLog.IP">
+            <summary>
+            请求的IP地址
+            </summary>
+        </member>
+        <member name="M:CDMISrestful.Controllers.ClinicInfoController.GetClinicalNewMobile(System.String,System.DateTime,System.DateTime,System.Int32)">
+            <summary>
+            获取目前最新Num条临床数据
+            </summary>
+            <param name="UserId"></param>
+            <param name="AdmissionDate"></param>
+            <param name="ClinicDate"></param>
+            <param name="Num"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.ClinicInfoController.GetClinicInfoDetail(System.String,System.String,System.String,System.String)">
+            <summary>
+            获取临床大类信息
+            </summary>
+            <param name="UserId"></param>
+            <param name="Type"></param>
+            <param name="VisitId"></param>
+            <param name="Date"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.ClinicInfoController.GetLabTestDtlList(System.String,System.String,System.String)">
+            <summary>
+            获取化验参数列表
+            </summary>
+            <param name="UserId"></param>
+            <param name="VisitId"></param>
+            <param name="SortNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.ClinicInfoController.GetClinicalInfoList(System.String)">
+            <summary>
+            获取患者的就诊信息 Table:Ps.InPatientInfo和Ps.OutPatientInfo Author:WF 2015-10-28"
+            </summary>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.ClinicInfoController.GetLatestHUserIdByHCode(System.String,System.String)">
+            <summary>
+            获取患者在就诊医院的就诊号 Table：Ps.UserIdMatch Author:WF  2015-10-28
+            </summary>
+            <param name="UserId"></param>
+            <param name="HospitalCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.ClinicInfoController.GetSymptomsList(System.String,System.String)">
+            <summary>
+            已有症状列表 Table:Ps.Symptoms  Author:WF 2015-10-28
+            </summary>
+            <param name="UserId"></param>
+            <param name="VisitId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.ClinicInfoController.GetDiagnosisInfoList(System.String,System.String)">
+            <summary>
+            根据患者Id，获取诊断信息 Table:Ps.Diagnosis Author:WF 2015-10-28
+            </summary>
+            <param name="UserId"></param>
+            <param name="VisitId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.ClinicInfoController.GetExaminationList(System.String,System.String)">
+            <summary>
+            根据患者Id,获取患者的检查信息  Table:Ps.Examination  Author:WF  2015-10-28
+            </summary>
+            <param name="UserId"></param>
+            <param name="VisitId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.ClinicInfoController.GetExamDtlList(System.String,System.String,System.String,System.String)">
+            <summary>
+            获取检查参数列表 Table:Ps.ExamDetails  Author:WF 2015-10-28
+            </summary>
+            <param name="UserId"></param>
+            <param name="VisitId"></param>
+            <param name="SortNo"></param>
+            <param name="ItemCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.ClinicInfoController.GetLabTestList(System.String,System.String)">
+            <summary>
+            根据患者Id, 获取患者的化验信息 Table:Ps.LabTest  Author:WF  2015-10-28
+            </summary>
+            <param name="UserId"></param>
+            <param name="VisitId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.DictController.GetHypertensionDrugTypeNameList">
+            <summary>
+            获取高血压药物类型名称列表 LY 2015-10-13
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.DictController.GetHypertensionDrug">
+            <summary>
+            获取高血压药物名称列表 LY 2015-10-13
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.DictController.GetDiabetesDrugTypeNameList">
+            <summary>
+            获取糖尿病药物类型名称列表 LY 2015-10-13
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.DictController.GetDiabetesDrug">
+            <summary>
+            获取糖尿病药物名称列表 LY 2015-10-13
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.DictController.GetTypeList(System.String)">
+            <summary>
+            获取某个分类的类别 LY 2015-10-13
+            </summary>
+            <param name="Category"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.DictController.GetBloodPressure">
+            <summary>
+            获取血压等级字典表的所有信息 LY 2015-10-13
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.DictController.GetInsuranceType">
+            <summary>
+            GetInsuranceType
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.DictController.GetAllDivisionType">
+            <summary>
+            获取科室所有Type和TypeName字段 SYF 20151109
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.DictController.GetDivisionDeptList(System.String)">
+            <summary>
+            根据Type获取科室Code和Name SYF 20151109
+            </summary>
+            <param name="Type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.DictController.GetMonitorMethodData(System.String,System.String)">
+            <summary>
+            根据Type和Code获取CmMonitorMethod表中其他字段 syf 20160114
+            </summary>
+            <param name="Type"></param>
+            <param name="Code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.MessageController.GetSMSDialogue(System.String,System.String)">
+            <summary>
+            GetSMSDialogue 获取消息对话 GL 2015-10-10
+            </summary>
+            <param name="Reciever"></param>
+            <param name="SendBy"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.MessageController.PutSMSRead(CDMISrestful.DataModels.Message)">
+            <summary>
+            PutSMSRead 将多条消息设为已读 GL 2015-10-10（修改2015-10-26）
+            </summary>
+            <param name="SendBy"></param>
+            <param name="Reciever"></param>
+            <param name="Content"></param>
+            <param name="piUserId"></param>
+            <param name="piTerminalName"></param>
+            <param name="piTerminalIP"></param>
+            <param name="piDeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.MessageController.PostSMS(CDMISrestful.DataModels.Message)">
+            <summary>
+            PostSMS 将消息写入数据库并获取发送时间与显示时间 GL 2015-10-26
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.MessageController.GetLatestSMS(System.String,System.String)">
+            <summary>
+            GetLatestSMS 获取最新一条消息 GL 2015-10-10
+            </summary>
+            <param name="DoctorId"></param>
+            <param name="PatientId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.MessageController.GetSMSCount(System.String,System.String)">
+            <summary>
+            GetSMSCount 获取未读消息数 GL 2015-10-10
+            </summary>
+            <param name="Reciever"></param>
+            <param name="SendBy"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.MessageController.GetSMSList(System.String,System.String)">
+            <summary>
+            GetSMSList 获取消息联系人列表 GL 2015-10-10
+            </summary>
+            <param name="DoctorId"></param>
+            <param name="CategoryCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.MessageController.PostNotification(CDMISrestful.DataModels.PsNotification)">
+            <summary>
+            提醒表PsNotification插入数据 syf 20151215
+            </summary>
+            <param name="Item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.MessageController.ChangeStatus(CDMISrestful.DataModels.NotificationStatus)">
+            <summary>
+            改变消息状态 SYF 20151215
+            </summary>
+            <param name="AccepterID"></param>
+            <param name="NotificationType"></param>
+            <param name="SortNo"></param>
+            <param name="Status"></param>
+            <param name="revUserId"></param>
+            <param name="TerminalName"></param>
+            <param name="TerminalIP"></param>
+            <param name="DeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.MessageController.GetDataByStatus(System.String,System.String,System.String)">
+            <summary>
+            根据Status取数据——SYF 20151215
+            </summary>
+            <param name="AccepterID"></param>
+            <param name="NotificationType"></param>
+            <param name="Status"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.MessageController.GetUnreadNum(System.String,System.String,System.String)">
+            <summary>
+            获取未读消息数量，Status填0为未读，施宇帆 20151222
+            </summary>
+            <param name="AccepterID"></param>
+            <param name="NotificationType"></param>
+            <param name="Status"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.ModuleInfoController.GetItemInfoByPIdAndModule(System.String,System.String)">
+            <summary>
+            输入PatientId和CategoryCode，获取患者已经购买的某个模块的详细信息 LY 2015-10-13
+            </summary>
+            <param name="UserId"></param>
+            <param name="CategoryCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.ModuleInfoController.GetSynBasicInfoDetail(System.String,System.String)">
+            <summary>
+            获取同步患者购买模块下的某些信息 LY 2015-10-14
+            </summary>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.PlanInfoController.GetComplianceAllSignsListByPeriod(System.String,System.String,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            计划信息展示 WF20151029 测试用例：U201510260001 PLN201510260001 20151028 20151039 Bloodpressure Bloodpressure_1
+            </summary>
+            <param name="UserId"></param>
+            <param name="PlanNo"></param>
+            <param name="StartDate"></param>
+            <param name="EndDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.PlanInfoController.PostTask(System.Collections.Generic.List{CDMISrestful.DataModels.DeleteTask})">
+            <summary>
+            根据主键删除Ps.Task任务表的一条数据 SYF 20151029
+            </summary>
+            <param name="Plan"></param>
+            <param name="Type"></param>
+            <param name="Code"></param>
+            <param name="SortNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.PlanInfoController.PostPlan(CDMISrestful.DataModels.SetPlanInfo)">
+            <summary>
+            Ps.Plan.SetData GL 2015-10-13
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.PlanInfoController.PostComplianceDetail(CDMISrestful.DataModels.ComplianceDetail)">
+            <summary>
+            Ps.ComplianceDetail.SetData CSQ 20151027
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.PlanInfoController.PostCreateTask(System.Collections.Generic.List{CDMISrestful.DataModels.CreateTask})">
+            <summary>
+            PostCreateTask 创建计划时插入Task信息 CSQ 20151025
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.PlanInfoController.GetTasks(System.String,System.String,System.String,System.String)">
+            <summary>
+            获取某个计划下的所有任务 CSQ 20151025
+            </summary>
+            <param name="PlanNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.PlanInfoController.GetTaskDetails(System.String,System.String)">
+            <summary>
+            CSQ 20151026 获取任务子表数据
+            </summary>
+            <param name="CategoryCode"></param>
+            <param name="Code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.PlanInfoController.PostPsTemplateSetData(CDMISrestful.DataModels.Template)">
+            <summary>
+            插入专员计划模板信息 CSQ 20151027
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="DoctorId"></param>
+            <param name="TemplateCode"></param>
+            <param name="TemplateName"></param>
+            <param name="Description"></param>
+            <param name="RecordDate"></param>
+            <param name="Redundance"></param>
+            <param name="piUserId"></param>
+            <param name="piTerminalName"></param>
+            <param name="piTerminalIP"></param>
+            <param name="piDeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.PlanInfoController.PostPsTemplateDetailSetData(CDMISrestful.DataModels.TemplateDetail)">
+            <summary>
+            专员建立计划模板 子表写数 csq 20151026
+            </summary>
+            <param name="templateDtl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.PlanInfoController.GetTemplateList(System.String)">
+            <summary>
+            获取专员计划模板列表 CSQ 20151026
+            </summary>
+            <param name="DoctorId"></param>
+            <param name="TemplateCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.PlanInfoController.GetTemplateDetails(System.String,System.String,System.String)">
+            <summary>
+            获取专员某个计划模板的详细信息 CSQ 20151026
+            </summary>
+            <param name="DoctorId"></param>
+            <param name="TemplateCode"></param>
+            <param name="ParentCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.PlanInfoController.PostCompliance(CDMISrestful.DataModels.SetComplance)">
+            <summary>
+            Ps.Compliance.SetData CSQ 20151027
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.PlanInfoController.PostTarget(CDMISrestful.DataModels.TargetByCode)">
+            <summary>
+            Ps.Target.SetData CSQ 20151027 任务目标数据写入
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.PlanInfoController.GetTarget(System.String,System.String,System.String)">
+            <summary>
+            CSQ 获取某条任务的Target信息 20151027
+            </summary>
+            <param name="PlanNo"></param>
+            <param name="Type"></param>
+            <param name="Code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.PlanInfoController.PostPlanStart(CDMISrestful.DataModels.GPlanInfo)">
+            <summary>
+            PostPlanStart 更新计划状态（开始计划） GL 2015-10-13
+            </summary>
+            <param name="PlanNo"></param>
+            <param name="Status"></param>
+            <param name="piUserId"></param>
+            <param name="piTerminalName"></param>
+            <param name="piTerminalIP"></param>
+            <param name="piDeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.PlanInfoController.GetPlanInfo(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            GetPlanInfo 根据PlanNo或PatientId/Module/Status,获取某计划详情 CSQ 20151031 
+            用法1：输入PlanNo，PatientId和Module为空，Status输入5 
+            用法2：PlanNo输入NULL，PatientId按界面输入，Module根据需要的模块输入，若为空则取全部模块数据；status根据需要输入2（未开始计划）/3（当前计划）/4（往前计划/已结束计划），若为0，则取全部状态的数据
+            </summary>
+            <param name="PlanNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.PlanInfoController.GetTasksForClick(System.String,System.String,System.String)">
+            <summary>
+            CSQ 20151031 计划信息展示时 图的点击事件响应
+            </summary>
+            <param name="PlanNo"></param>
+            <param name="ParentCode"></param>
+            <param name="Date"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.PlanInfoController.GetComplianceListInC(System.String,System.String,System.String,System.String)">
+            <summary>
+            获取某个病人某个模块指定时间段内的依从率 SYF
+            </summary>
+            <param name="PatientId"></param>
+            <param name="StartDate"></param>
+            <param name="EndDate"></param>
+            <param name="Module"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.PlanInfoController.GetDTaskByPlanNo(System.String)">
+            <summary>
+            获取计划修改前后的不同任务 syf 20151223
+            </summary>
+            <param name="PlanNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.PlanInfoController.GetTaskCompliance(System.String)">
+            <summary>
+            获取某计划所有任务的依从状态情况 施宇帆 20150104
+            </summary>
+            <param name="PlanNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.RiskInfoController.GetDescription(System.Int32)">
+            <summary>
+            根据收缩压获取血压等级说明 LY 2015-10-13
+            </summary>
+            <param name="SBP"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.RiskInfoController.PostRiskResult(CDMISrestful.DataModels.RiskResult)">
+            <summary>
+            插入风险评估结果 LY 2015-10-13
+            </summary>
+            <param name="UserId"></param>
+            <param name="AssessmentType"></param>
+            <param name="AssessmentName"></param>
+            <param name="AssessmentTime"></param>
+            <param name="Result"></param>
+            <param name="revUserId"></param>
+            <param name="TerminalName"></param>
+            <param name="TerminalIP"></param>
+            <param name="DeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.RiskInfoController.GetRiskResult(System.String,System.String)">
+            <summary>
+            根据UserId获取最新风险评估结果 LY 2015-10-13
+            </summary>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.RiskInfoController.GetPsTreatmentIndicators(System.String)">
+            <summary>
+            根据UserId获取风险评估结果 WF 20151027
+            </summary>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.RiskInfoController.POSTPsTreatmentIndicatorsSetData(CDMISrestful.DataModels.RiskResult)">
+            <summary>
+            Ps.TreatmentIndicators  SetData WF 20151027
+            </summary>
+            <param name="Item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.RiskInfoController.PostPsParametersSetData(CDMISrestful.DataModels.Parameters)">
+            <summary>
+            Ps.Parameters  SetData WF20151027
+            </summary>
+            <param name="Item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.RiskInfoController.GetParameters(System.String)">
+            <summary>
+            获取评估表Ps.Parameters的具体参数（对应一次评估）  GetParameters WF20151027
+            </summary>
+            <param name="Indicators"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.RiskInfoController.GetMaxSortNo(System.String)">
+            <summary>
+            Ps.TreatmentIndicators GetMaxSortNo
+            </summary>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.RiskInfoController.GetM1RiskInput(System.String)">
+            <summary>
+            获取高血压模块评估参数所需输入 SYF 20151117
+            </summary>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.RiskInfoController.GetM3RiskInput(System.String)">
+            <summary>
+            获取心衰模型评估的所有输入 SYF 20151117
+            </summary>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.RiskInfoController.GetRisk(System.String,System.String)">
+            <summary>
+            计算风险评估 SYF 2015-11-16
+            </summary>
+            <param name="UserId"></param>
+            <param name="Module"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.RiskInfoController.AddM1Risk(System.String,CDMISrestful.DataModels.M1RiskInput,System.Int32,System.Int32,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            新建高血压风险评估（修改参数） SYF 20151118
+            </summary>
+            <param name="PatientId"></param>
+            <param name="M1RiskInput"></param>
+            <param name="RecordDate"></param>
+            <param name="RecordTime"></param>
+            <param name="piUserId"></param>
+            <param name="piTerminalName"></param>
+            <param name="piTerminalIP"></param>
+            <param name="piDeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.RiskInfoController.AddM3Risk(System.String,CDMISrestful.DataModels.M3RiskInput,System.Int32,System.Int32,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            新建心衰模块风险评估（修改参数） SYF 20151118
+            </summary>
+            <param name="PatientId"></param>
+            <param name="M3RiskInput"></param>
+            <param name="RecordDate"></param>
+            <param name="RecordTime"></param>
+            <param name="piUserId"></param>
+            <param name="piTerminalName"></param>
+            <param name="piTerminalIP"></param>
+            <param name="piDeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.ServiceController.sendSMS(System.String,System.String,System.String)">
+            <summary>
+            发送验证码短信 20151016 CSQ
+            smsType为verification时，不用输入content，发送验证码短信；
+            smsType为confirmtoPatient时，发送预约情况给病人，需要content；
+            smsType为confirmtoHealthCoach时，发送预约情况给专员，需要content。
+            content的内容示例： 王五，2015年11月11日，海军总医院（目标姓名，预约时间，预约地点）
+            </summary>
+            <param name="phoneNo"></param>
+            <param name="smsType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.ServiceController.checkverification(System.String,System.String,System.String)">
+            <summary>
+            获取验证码 CSQ 20151021
+            1：验证码正确
+            2：验证码错误
+            0：没有验证码或验证码已过期
+            </summary>
+            <param name="mobile"></param>
+            <param name="smsType"></param>
+            <param name="verification"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.ServiceController.GetNotification(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            推送消息 通知   platform 是平台，不输入的时候默认为全部（安卓和ios）,可以单独输入android或者ios,不支持winphone
+             Alias 是别名，用于定位推送，输入为空时会推送给全部用户 接受者Id
+             notification是要推送的消息内容 title是要推送的内容的标题，目前只有android可以用(platform必须填android，否则标题无效)， ID为发送者的UID
+            </summary>
+            <param name="platform"></param>
+            <param name="Alias"></param>
+            <param name="notification"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.ServiceController.GetPatientInfo(System.String)">
+            <summary>
+            浙大输出接口 LY 2015-10-29
+            </summary>
+            <param name="PatientId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.ServiceController.VitalSignFromZKY(CDMISrestful.DataModels.VitalSignFromDevice)">
+            <summary>
+            浙大接收接口处理 LY 2015-10-31
+            </summary>
+            <param name="VitalSigns"></param>
+            <param name="revUserId"></param>
+            <param name="TerminalName"></param>
+            <param name="TerminalIP"></param>
+            <param name="DeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.GetIDByInputPhone(System.String,System.String)">
+            <summary>
+            根据输入的手机号和邮箱等获取系统唯一标识符 20151023 CSQ
+            </summary>
+            <param name="Type"></param>
+            <param name="Name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.LogOn(CDMISrestful.DataModels.LogOn)">
+            <summary>
+            登录
+            </summary>
+            <param name="logOn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.Register(CDMISrestful.DataModels.Register)">
+            <summary>
+            注册
+            </summary>
+            <param name="Register"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.Activition(CDMISrestful.DataModels.Activation)">
+            <summary>
+            激活
+            </summary>
+            <param name="activation"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.ChangePassword(CDMISrestful.DataModels.ChangePassword)">
+            <summary>
+            修改密码
+            </summary>
+            <param name="ChangePassword"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.Verification(CDMISrestful.DataModels.Verification)">
+            <summary>
+            验证用户名
+            </summary>
+            <param name="Verification"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.GetPatBasicInfo(System.String)">
+            <summary>
+            获取患者基本信息、模块信息
+            </summary>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.GetPatientDetailInfo(System.String)">
+            <summary>
+            根据用户名获取用户详细信息
+            </summary>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.GetDoctorDetailInfo(System.String)">
+            <summary>
+            根据用户名获取医生身份信息
+            </summary>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.GetDoctorInfo(System.String)">
+            <summary>
+            根据用户名获取医生基本信息
+            </summary>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.SetDoctorInfoDetail(System.Collections.Generic.List{CDMISrestful.DataModels.SetDoctorInfoDetail})">
+            <summary>
+            Ps.DoctorInfoDetail写数据
+            </summary>
+            <param name="SetDoctorInfoDetail"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.SetPsDoctor(CDMISrestful.DataModels.SetPsDoctor)">
+            <summary>
+            Ps.DoctorInfo写数据
+            </summary>
+            <param name="SetPsDoctor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.SetPatBasicInfo(CDMISrestful.DataModels.SetPatBasicInfo)">
+            <summary>
+            插入患者基本信息
+            </summary>
+            <param name="SetPatBasicInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.PostPatBasicInfoDetail(System.Collections.Generic.List{CDMISrestful.DataModels.BasinInfoDetail})">
+            <summary>
+            插入患者详细信息 LY 2015-10-14
+            </summary>
+            <param name="Patient"></param>
+            <param name="CategoryCode"></param>
+            <param name="ItemCode"></param>
+            <param name="ItemSeq"></param>
+            <param name="Value"></param>
+            <param name="Description"></param>
+            <param name="SortNo"></param>
+            <param name="revUserId"></param>
+            <param name="TerminalName"></param>
+            <param name="TerminalIP"></param>
+            <param name="DeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.GetCalendar(System.String)">
+            <summary>
+            获取专员日程安排
+            </summary>
+            <param name="DoctorId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.PostPsCalendarSetData(CDMISrestful.DataModels.CalendarSetData)">
+            <summary>
+            日历表插入数据 syf 20151116
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.GetHealthCoachList">
+            <summary>
+            GetHealthCoachList 获取所有健康专员列表 SYF
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.GetHealthCoachInfo(System.String)">
+            <summary>
+            GetHealthCoachInfo 获取某个健康专员的具体信息 SYF
+            </summary>
+            <param name="HealthCoachID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.ReserveHealthCoach(CDMISrestful.DataModels.ReserveHealthCoach)">
+            <summary>
+            ReserveHealthCoach 预约健康专员 SYF
+            没有预约0，正在处理1，预约失败2，加好友成功3，预约成功4
+            </summary>
+            <param name="ReserveHealthCoach"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.UpdateReservation(CDMISrestful.DataModels.UpdateReservation)">
+            <summary>
+            UpdateReservation 更新预约状态 SYF
+            </summary>
+            <param name="UpdateReservation"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.GetCommentList(System.String,System.String)">
+            <summary>
+            GetCommentList 获取某专员（医生）某个模块的评论列表 SYF
+            </summary>
+            <param name="DoctorId"></param>
+            <param name="CategoryCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.GetHealthCoachListByPatient(System.String)">
+            <summary>
+            GetHealthCoachListByPatient 获取某病人对应的专员列表 SYF
+            </summary>
+            <param name="PatientId"></param>
+            <param name="CategoryCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.RemoveHealthCoach(System.String,System.String,System.String)">
+            <summary>
+            RemoveHealthCoach 某病人解除某一模块的某个健康专员 SYF
+            </summary>
+            <param name="PatientId"></param>
+            <param name="DoctorId"></param>
+            <param name="CategoryCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.GetAppoitmentPatientList(System.String,System.String)">
+            <summary>
+            GetAppoitmentPatientList 获取某专员对应的预约列表 SYF
+            没有预约0，正在处理1，预约失败2，加好友成功3，预约成功4
+            </summary>
+            <param name="healthCoachID"></param>
+            <param name="Status"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.GetPatientsPlan(System.String,System.String,System.String,System.String)">
+            <summary>
+            替代GetPatientsList 用于pad登录后获得专员的病人列表
+            </summary>
+            <param name="healthCoachID"></param>
+            <param name="Status"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.GetAllRoleMatch(System.String)">
+            <summary>
+            根据UID获取用户所有角色
+            </summary>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.GetPhoneNoByUserId(System.String)">
+            <summary>
+            根据UserId获取手机号 CSQ20151109
+            </summary>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.SetComment(CDMISrestful.DataModels.SetComment)">
+            <summary>
+            用户插入对某一专员的评分和评价，并更新该专员总评分 SYF 20151113
+            </summary>
+            <param name="SetComment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.GetBasicInfoDtlValue(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            获取basicInfoDtl中Value字段的值：用于判断患者评价专员的权限 CSQ 20151116
+            </summary>
+            <param name="UserId"></param>
+            <param name="CategoryCode"></param>
+            <param name="ItemCode"></param>
+            <param name="ItemSeq"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.GetHModulesByID(System.String,System.String)">
+            <summary>
+            输入患者Id和专员Id，取出对应模块编码和名称 SYF 20151119
+            </summary>
+            <param name="PatientId"></param>
+            <param name="DoctorId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.GetValueByType(System.String,System.String)">
+            <summary>
+            根据Type获取Value 施宇帆
+            </summary>
+            <param name="UserId"></param>
+            <param name="Type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.PostConsultation(CDMISrestful.DataModels.Consultation)">
+            <summary>
+            PsConsultation表插入一条数据 SYF 2016-01-07 SortNo不填或者填0，数据库SortNo自增，正常填写则按提供的SortNo值插入
+            </summary>
+            <param name="Consultation"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.GetConsultationPatientsByStatus(System.String,System.Int32)">
+            <summary>
+            根据DoctorId和Status取对应病人列表——SYF 20160107 Status 1：已申请 2：已短信通知 3：已查看 4：已处理 5：拒绝处理 6：申请作废/申请过期 （123未处理，用7表示；456已处理，用8表示）
+            </summary>
+            <param name="DoctorId"></param>
+            <param name="Status"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.ConsultationChangeStatus(CDMISrestful.DataModels.ConsultationChangeStatus)">
+            <summary>
+            改变处理状态 syf 20160107
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.ConsultationGetDataByDP(System.String,System.String)">
+            <summary>
+            根据DoctorId,PatientId获取Ps.Consultation表中所有相关数据——SYF 20160114
+            </summary>
+            <param name="DoctorId"></param>
+            <param name="PatientId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.VitalInfoController.GetLatestPatientVitalSigns(System.String,System.String,System.String)">
+            <summary>
+            GetLatestPatientVitalSigns 获取病人某项生理参数最新值 GL 2015-10-12
+            </summary>
+            <param name="UserId"></param>
+            <param name="ItemType"></param>
+            <param name="ItemCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.VitalInfoController.PostPatientVitalSigns(CDMISrestful.DataModels.SetVitalInfo)">
+            <summary>
+            SetPatientVitalSigns  GL 2015-10-12  
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Controllers.VitalInfoController.GetVitalSignsByPeriod(System.String,System.Int32,System.Int32)">
+            <summary>
+            WF 20151031 获取体征信息 一段时间内的所有体征信息 同一天同一种体征可以有多条输出
+            </summary>
+            <param name="UserId"></param>
+            <param name="StartDate"></param>
+            <param name="EndDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.ClinicInfoMethod.PsClinicalInfoGetTransClinicalInfo(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            住院-转科处理 LY 2015-10-10  
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <param name="VisitId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.ClinicInfoMethod.PsClinicalInfoGetOtherTable(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            检查化验等信息 LY 2015-10-10
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <param name="VisitId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.ClinicInfoMethod.PsClinicalInfoGetNextOutDate(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            获取门诊的下一日期 LY 2015-10-10
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <param name="ClinicDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.ClinicInfoMethod.PsClinicalInfoGetNextInDate(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            获取住院的下一日期 LY 2015-10-10
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <param name="AdmissionDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.ClinicInfoMethod.PsClinicalInfoGetColor(System.String)">
+            <summary>
+            颜色分配：根据首标签决定 LY 2015-10-10
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.ClinicInfoMethod.PsDiagnosisGetDiagnosisInfo(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            得到诊断信息 LY 2015-10-10
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <param name="VisitId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.ClinicInfoMethod.PsExaminationGetExaminationList(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            得到检查信息 LY 2015-10-10
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="piUserId"></param>
+            <param name="piVisitId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.ClinicInfoMethod.GetNewExamForM1(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            CSQ 20150714 //20151012 SYF
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.ClinicInfoMethod.GetLabTestList(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            根据piUserId和piVisitId获取化验结果
+            </summary>
+            <param name="pclsCacheList"></param>
+            <param name="piUserId"></param>
+            <param name="piVisitId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.ClinicInfoMethod.GetNewLabTest(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            得到某些最新的化验结果 LY 2015-10-14
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.ClinicInfoMethod.GetLabTestDetails(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String)">
+            <summary>
+            获取患者某次化验的所有详细信息 LY 2015-10-14
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <param name="VisitId"></param>
+            <param name="SortNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.ClinicInfoMethod.GetDrugRecord(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            SYF 20151012
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="piUserId"></param>
+            <param name="piVisitId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.ClinicInfoMethod.GetPsDrugRecord(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            syf 2015-10-12 获取某病人所有药嘱
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="piUserId"></param>
+            <param name="Module"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.ClinicInfoMethod.GetDrugRecordList(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            根据piUserId和piVisitId获取用药结果
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="piUserId"></param>
+            <param name="piVisitId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.ClinicInfoMethod.PsClinicalInfoGetClinicalInfoNum(CDMISrestful.CommonLibrary.DataConnection,System.String,System.DateTime,System.DateTime,System.Int32)">
+            <summary>
+            住院（入院、出院）、门诊、急诊——住院拆分成入院、出院，再排序，共取出Num条 LY 2015-10-12
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <param name="AdmissionDate"></param>
+            <param name="ClinicDate"></param>
+            <param name="Num"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.ClinicInfoMethod.GetClinicInfoDetail(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String,System.String)">
+            <summary>
+            诊断、检查、化验、用药信息查看/用于时间轴
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <param name="Type"></param>
+            <param name="VisitId"></param>
+            <param name="Date"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.CommonMethod.GetNo(CDMISrestful.CommonLibrary.DataConnection,System.Int32,System.String)">
+            <summary>
+            GetNo 自动编号 CSQ 20151010
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="NumberingType"></param>
+            <param name="TargetDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.CommonMethod.GetServerTime(CDMISrestful.CommonLibrary.DataConnection)">
+            <summary>
+            GetServerTime 获取服务器时间 CSQ 20151010
+            </summary>
+            <param name="pclsCache"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.CommonMethod.GetServerDate(CDMISrestful.CommonLibrary.DataConnection)">
+            <summary>
+            获取服务器日期(解决频繁连接导致的连接未及时关闭)
+            </summary>
+            <param name="pclsCache"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.DictMethod.CmMstTypeGetTypeList(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            获取某个分类的类别 CSQ 20151010
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="Category"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.DictMethod.GetLifeStyleDetail(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            获取生活方式细节 CSQ 20151010
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="Module"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.DictMethod.GetInsurance(CDMISrestful.CommonLibrary.DataConnection)">
+            <summary>
+            GetInsurance CSQ 20151010
+            </summary>
+            <param name="pclsCache"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.DictMethod.GetCmMstInfoItem(CDMISrestful.CommonLibrary.DataConnection)">
+            <summary>
+            CSQ 20151010
+            </summary>
+            <param name="pclsCache"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.DictMethod.GetMstInfoItemByCategoryCode(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            GetMstInfoItemByCategoryCode CSQ 2015-10-10 
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="CategoryCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.DictMethod.CmMstHypertensionDrugGetTypeList(CDMISrestful.CommonLibrary.DataConnection)">
+            <summary>
+            GetTypeList 返回所有类型代码及名称 CSQ 20151010
+            </summary>
+            <param name="pclsCache"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.DictMethod.GetHypertensionDrug(CDMISrestful.CommonLibrary.DataConnection)">
+            <summary>
+            GetHypertensionDrug 返回所有数据信息 CSQ 20151010
+            </summary>
+            <param name="pclsCache"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.DictMethod.CmMstDiabetesDrugGetTypeList(CDMISrestful.CommonLibrary.DataConnection)">
+            <summary>
+             CmMstDiabetesDrugGetTypeList 返回所有类型代码及名称 CSQ 20151010
+            </summary>
+            <param name="pclsCache"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.DictMethod.GetDiabetesDrug(CDMISrestful.CommonLibrary.DataConnection)">
+            <summary>
+             GetDiabetesDrug 返回所有数据信息 CSQ 20151010
+            </summary>
+            <param name="pclsCache"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.DictMethod.GetNo(CDMISrestful.CommonLibrary.DataConnection,System.Int32,System.String)">
+            <summary>
+            syf 20151029
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="NumberingType"></param>
+            <param name="TargetDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.DictMethod.GetAllDivisionType(CDMISrestful.CommonLibrary.DataConnection)">
+            <summary>
+            获取科室所有Type和TypeName字段 SYF 20151109
+            </summary>
+            <param name="pclsCache"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.DictMethod.GetDivisionDeptList(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            SYf 20151109
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="Type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.MessageMethod.GetSMSDialogue(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            获取消息对话 GL 2015-10-10
+            </summary>
+            <param name="Reciever"></param>
+            <param name="SendBy"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.MessageMethod.SetSMS(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            将消息写入数据库并获取发送时间与显示时间 GL 2015-10-10（修改2015-10-26）
+            </summary>
+            <param name="SendBy"></param>
+            <param name="Reciever"></param>
+            <param name="Content"></param>
+            <param name="piUserId"></param>
+            <param name="piTerminalName"></param>
+            <param name="piTerminalIP"></param>
+            <param name="piDeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.MessageMethod.GetLatestSMS(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            获取最新一条消息 GL 2015-10-10
+            </summary>
+            <param name="DoctorId"></param>
+            <param name="PatientId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.MessageMethod.SetSMSRead(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            将多条消息设为已读 GL 2015-10-10
+            </summary>
+            <param name="Reciever"></param>
+            <param name="SendBy"></param>
+            <param name="piUserId"></param>
+            <param name="piTerminalName"></param>
+            <param name="piTerminalIP"></param>
+            <param name="piDeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.MessageMethod.GetSMSCountForOne(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            获取一对一未读消息数 GL 2015-10-10
+            </summary>
+            <param name="Reciever"></param>
+            <param name="SendBy"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.MessageMethod.GetSMSList(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            获取消息联系人列表 GL 2015-10-10
+            </summary>
+            <param name="DoctorId"></param>
+            <param name="CategoryCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.MessageMethod.GetSMSCountForAll(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            获取某医生未读消息总数 GL 2015-10-10
+            </summary>
+            <param name="DoctorId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.MessageMethod.PsNotificationSetData(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            提醒表PsNotification插入数据 syf 20151215
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="AccepterID"></param>
+            <param name="NotificationType"></param>
+            <param name="Title"></param>
+            <param name="Description"></param>
+            <param name="SendTime"></param>
+            <param name="SenderID"></param>
+            <param name="Status"></param>
+            <param name="Redundancy"></param>
+            <param name="revUserId"></param>
+            <param name="TerminalName"></param>
+            <param name="TerminalIP"></param>
+            <param name="DeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.MessageMethod.PsNotificationChangeStatus(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.Int32,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            改变消息状态 SYF 20151215
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="AccepterID"></param>
+            <param name="NotificationType"></param>
+            <param name="SortNo"></param>
+            <param name="Status"></param>
+            <param name="revUserId"></param>
+            <param name="TerminalName"></param>
+            <param name="TerminalIP"></param>
+            <param name="DeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.MessageMethod.PsNotificationGetDataByStatus(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String)">
+            <summary>
+            根据Status取数据——SYF 20151215
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="AccepterID"></param>
+            <param name="NotificationType"></param>
+            <param name="Status"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.MessageMethod.PsNotificationGetUnreadNum(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String)">
+            <summary>
+            获取未读消息数 施宇帆 20151222
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="AccepterID"></param>
+            <param name="NotificationType"></param>
+            <param name="Status"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.ModuleInfoMethod.PsBasicInfoDetailSetData(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String,System.Int32,System.String,System.String,System.Int32,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            SetData LY 2015-10-10 
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="Patient"></param>
+            <param name="CategoryCode"></param>
+            <param name="ItemCode"></param>
+            <param name="ItemSeq"></param>
+            <param name="Value"></param>
+            <param name="Description"></param>
+            <param name="SortNo"></param>
+            <param name="revUserId"></param>
+            <param name="TerminalName"></param>
+            <param name="TerminalIP"></param>
+            <param name="DeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.ModuleInfoMethod.PsBasicInfoDetailGetValue(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String,System.Int32)">
+            <summary>
+             获取需要知道的项目的值 LY 2015-10-10
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <param name="CategoryCode"></param>
+            <param name="ItemCode"></param>
+            <param name="ItemSeq"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.ModuleInfoMethod.PsBasicInfoDetailGetSDoctor(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            得到专员信息 LY 2015-10-10
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="PatientId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.ModuleInfoMethod.PsBasicInfoDetailGetPatientDetailInfo(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            得到病人详细信息 LY 2015-10-10
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.ModuleInfoMethod.PsBasicInfoDetailGetPatientBasicInfoDetail(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            获取用户全部详细信息 LY 2015-10-10
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <param name="CategoryCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.ModuleInfoMethod.PsDoctorInfoDetailSetData(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String,System.Int32,System.String,System.String,System.Int32,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            SetData  LY 2015-10-10
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="Doctor"></param>
+            <param name="CategoryCode"></param>
+            <param name="ItemCode"></param>
+            <param name="ItemSeq"></param>
+            <param name="Value"></param>
+            <param name="Description"></param>
+            <param name="SortNo"></param>
+            <param name="piUserId"></param>
+            <param name="piTerminalName"></param>
+            <param name="piTerminalIP"></param>
+            <param name="piDeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.ModuleInfoMethod.PsDoctorInfoDetailGetMaxItemSeq(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String)">
+            <summary>
+            得到最大的ItemSeq LY 2015-10-10
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="DoctorId"></param>
+            <param name="CategoryCode"></param>
+            <param name="ItemCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.ModuleInfoMethod.PsDoctorInfoDetailGetDoctorInfoDetail(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            得到医生详细信息 LY 2015-10-10
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.PlanInfoMethod.PsPlanSetData(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.Int32,System.Int32,System.String,System.Int32,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="PlanNo"></param>
+            <param name="PatientId"></param>
+            <param name="StartDate"></param>
+            <param name="EndDate"></param>
+            <param name="Module"></param>
+            <param name="Status"></param>
+            <param name="DoctorId"></param>
+            <param name="piUserId"></param>
+            <param name="piTerminalName"></param>
+            <param name="piTerminalIP"></param>
+            <param name="piDeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.PlanInfoMethod.ChangePlanStatus(CDMISrestful.CommonLibrary.DataConnection,System.String,System.Int32,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            插入一条新纪录到Ps.Plan表
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="PlanNo"></param>
+            <param name="Status"></param>
+            <param name="piUserId"></param>
+            <param name="piTerminalName"></param>
+            <param name="piTerminalIP"></param>
+            <param name="piDeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.PlanInfoMethod.GetWeekPeriod(CDMISrestful.CommonLibrary.DataConnection,System.Int32)">
+            <summary>
+            获取某计划的相关信息 SYF 2015-10-10
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="PlanStartDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.PlanInfoMethod.GetProgressRate(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            获取某计划的进度和剩余天数 SYF 2015-10-10
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="PlanNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.PlanInfoMethod.GetPlanInfo(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            获取某计划的相关信息 SYF 2015-10-10
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="PlanNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.PlanInfoMethod.GetOverDuePlanByDoctorId(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            SYF 2015-10-10 获取健康专员负责的所有患者最新结束(status = 4)计划列表
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="DoctorId"></param>
+            <param name="Module"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.PlanInfoMethod.GetExecutingPlanByM(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            获取某模块正在执行的计划 Syf 2015-10-10
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="PatientId"></param>
+            <param name="Module"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.PlanInfoMethod.GetExecutingPlan(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            获取正在执行的计划 SYF 2015-10-10
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="PatientId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.PlanInfoMethod.PsComplianceDetailSetData(CDMISrestful.CommonLibrary.DataConnection,System.String,System.Int32,System.String,System.String,System.String,System.Int32,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            CSQ 20151027 写数据
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="Parent"></param>
+            <param name="Id"></param>
+            <param name="Status"></param>
+            <param name="CoUserId"></param>
+            <param name="CoTerminalName"></param>
+            <param name="CoTerminalIP"></param>
+            <param name="CoDeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.PlanInfoMethod.PsComplianceSetData(CDMISrestful.CommonLibrary.DataConnection,System.String,System.Int32,System.Double,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+             CSQ 20151027 插入PsCompliance某条数据
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="PatientId"></param>
+            <param name="Date"></param>
+            <param name="PlanNo"></param>
+            <param name="Compliance"></param>
+            <param name="revUserId"></param>
+            <param name="TerminalName"></param>
+            <param name="TerminalIP"></param>
+            <param name="DeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.PlanInfoMethod.GetTasksComListByDate(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.Int32)">
+            <summary>
+            某一天所有任务的依从情况 DataTable数据库形式   用于点击事件显示详细   SYF 20151010
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="PatientId"></param>
+            <param name="PlanNo"></param>
+            <param name="Date"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.PlanInfoMethod.GetTasksComByPeriodDT(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            某段时间所有任务的依从情况  DataTable数据库形式  SYF 20151010
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="PatientId"></param>
+            <param name="PlanNo"></param>
+            <param name="StartDate"></param>
+            <param name="EndDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.PlanInfoMethod.GetSignDetailByPeriod(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            通过Ps.Compliance中的date获取当天某项生理参数值，形成系列  DataTable 形式syf 2015-10-10
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="PatientId"></param>
+            <param name="PlanNo"></param>
+            <param name="ItemType"></param>
+            <param name="ItemCode"></param>
+            <param name="StartDate"></param>
+            <param name="EndDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.PlanInfoMethod.GetComplianceListByPeriod(CDMISrestful.CommonLibrary.DataConnection,System.String,System.Int32,System.Int32)">
+            <summary>
+            WF 20151030 获取某计划的某段时间(包括端点)的依从率列表
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="PatientId"></param>
+            <param name="PlanNo"></param>
+            <param name="StartDate"></param>
+            <param name="EndDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.PlanInfoMethod.GetComplianceByDate(CDMISrestful.CommonLibrary.DataConnection,System.String,System.Int32)">
+            <summary>
+            CSQ 20151031 获取患者某计划内某天的依从率
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="PatientId"></param>
+            <param name="Date"></param>
+            <param name="PlanNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.PlanInfoMethod.GetCompliacneRate(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            计算某段时间的总依从率 syf 2015-10-10
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="PatientId"></param>
+            <param name="PlanNo"></param>
+            <param name="StartDate"></param>
+            <param name="EndDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.PlanInfoMethod.GetSignBPGrade(System.String,System.Int32,System.Collections.Generic.List{CDMISrestful.DataModels.MstBloodPressure})">
+            <summary>
+            获取某血压值的级别 LY 2015-10-12
+            </summary>
+            <param name="BPType"></param>
+            <param name="Value"></param>
+            <param name="Reference"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.PlanInfoMethod.GetDescription(CDMISrestful.CommonLibrary.DataConnection,System.Int32)">
+            <summary>
+            根据收缩压获取血压等级说明 LY 2015-10-12
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="SBP"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.PlanInfoMethod.GetBPGrades(CDMISrestful.CommonLibrary.DataConnection)">
+            <summary>
+            从数据库获取血压分级规则 LY 2015-10-12
+            </summary>
+            <param name="pclsCache"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.PlanInfoMethod.GetBPColor(System.String,System.String)">
+            <summary>
+            获取血压点和数据图区块的颜色 LY 2015-10-12
+            </summary>
+            <param name="name"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.PlanInfoMethod.GetSignInfoByM1(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String,System.Int32,System.Int32,System.Collections.Generic.List{CDMISrestful.DataModels.MstBloodPressure})">
+            <summary>
+            生成收缩压/舒张压/脉率点图，并分级 LY 2015-10-12
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <param name="PlanNo"></param>
+            <param name="Code"></param>
+            <param name="StartDate"></param>
+            <param name="EndDate"></param>
+            <param name="reference"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.PlanInfoMethod.GetGuidesByCode(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.Collections.Generic.List{CDMISrestful.DataModels.MstBloodPressure})">
+            <summary>
+            输出用于图形的分级区域 LY 2015-10-12
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="PlanNo"></param>
+            <param name="Code"></param>
+            <param name="Reference"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.PlanInfoMethod.GetSignByPeriod(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            GetSignByPeriod LS 2015-03-30  只针对一种参数   syf 20151029
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <param name="ItemType"></param>
+            <param name="ItemCode"></param>
+            <param name="StartDate"></param>
+            <param name="EndDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.PlanInfoMethod.GetComplianceListInC(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String,System.String)">
+            <summary>
+            获取某个病人某个模块指定时间段内的依从率 SYF 20151102
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="PatientId"></param>
+            <param name="StartDate"></param>
+            <param name="EndDate"></param>
+            <param name="Module"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.PlanInfoMethod.GetLogPlanInfo(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            获取某一版本计划的信息 syf 20151222
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="PlanNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.PlanInfoMethod.GetAllTaskByLogPlan(CDMISrestful.CommonLibrary.DataConnection,System.String,System.Int32)">
+            <summary>
+            施宇帆 2015-12-22 获取某版本计划下所有任务的信息
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="PlanNo"></param>
+            <param name="piEdition"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.RiskInfoMethod.PsTreatmentIndicatorsSetData(CDMISrestful.CommonLibrary.DataConnection,System.String,System.Int32,System.String,System.String,System.DateTime,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Ps.TreatmentIndicators.SetData GL 2015-10-10
+            </summary>
+            <param name="UserId"></param>
+            <param name="SortNo"></param>
+            <param name="AssessmentType"></param>
+            <param name="AssessmentName"></param>
+            <param name="AssessmentTime"></param>
+            <param name="Result"></param>
+            <param name="revUserId"></param>
+            <param name="TerminalName"></param>
+            <param name="TerminalIP"></param>
+            <param name="DeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.RiskInfoMethod.GetMaxSortNo(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            GL 2015-10-10
+            </summary>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.RiskInfoMethod.GetResult(CDMISrestful.CommonLibrary.DataConnection,System.String,System.Int32,System.String)">
+            <summary>
+            GL 2015-10-10
+            </summary>
+            <param name="UserId"></param>
+            <param name="SortNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.GetModulesByPID(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            GetModulesByPID LS 2014-12-4 //SYF20151109
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="PatientId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.GetUserInfoByUserId(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+             GetUserInfoByUserId ZAM 2014-12-02 //syf 20151014
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.GetIDByInputPhone(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            根据手机号获取userId LS 2015-03-26  TDY 20150507修改 //syf 20151013
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="Type"></param>
+            <param name="Name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.CheckPasswordByInput(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String)">
+            <summary>
+            王丰 20151010
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="Type"></param>
+            <param name="Name"></param>
+            <param name="Password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.GetIDByInput(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            王丰 20151010
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="Type"></param>
+            <param name="Name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.CheckRepeat(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+             CheckRepeat LS 2015-03-26  TDY 20150507修改 //WF 20151010
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="Input"></param>
+            <param name="Type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.ChangePassword(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            ChangePassword ZAM 2014-12-01 //WF 20151010
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <param name="OldPassword"></param>
+            <param name="newPassword"></param>
+            <param name="revUserId"></param>
+            <param name="TerminalName"></param>
+            <param name="TerminalIP"></param>
+            <param name="DeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.Register(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Register TDY 2015-04-07 专员注册 //TDY 20150419修改 //WF 20151010
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="Type"></param>
+            <param name="Name"></param>
+            <param name="Value"></param>
+            <param name="Password"></param>
+            <param name="UserName"></param>
+            <param name="revUserId"></param>
+            <param name="TerminalName"></param>
+            <param name="TerminalIP"></param>
+            <param name="DeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.GetNameByUserId(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+             GetNameByUserId ZAM 2014-11-26 //WF 20151010
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.GetActivatedState(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            王丰 20151010
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserID"></param>
+            <param name="RoleClass"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.GetAllRoleMatch(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            王丰 20151010
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.PsRoleMatchSetData(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            TDY 2015-05-26 //WF 20151010
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="PatientId"></param>
+            <param name="RoleClass"></param>
+            <param name="ActivationCode"></param>
+            <param name="ActivatedState"></param>
+            <param name="Description"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.SetActivition(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String)">
+            <summary>
+             TDY 20150526 SetActivition //WF 20151010
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserID"></param>
+            <param name="RoleClass"></param>
+            <param name="ActivationCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.GetActiveUserByRole(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            根据角色获取激活用户 2015-06-03 ZC //SYF 20151022
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="RoleClass"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.PsBasicInfoSetData(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.Int32,System.Int32,System.Int32,System.String,System.String,System.String,System.Int32,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            SetData WF 2014-12-2 //WF 20151010
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <param name="UserName"></param>
+            <param name="Birthday"></param>
+            <param name="Gender"></param>
+            <param name="BloodType"></param>
+            <param name="IDNo"></param>
+            <param name="DoctorId"></param>
+            <param name="InsuranceType"></param>
+            <param name="InvalidFlag"></param>
+            <param name="revUserId"></param>
+            <param name="TerminalName"></param>
+            <param name="TerminalIP"></param>
+            <param name="DeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.GetUserBasicInfo(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            GetUserBasicInfo TDY 2014-12-4  //WF 20151010
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.GetM1RiskInput(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            获取高血压评估所需输入（BasicInfoDetail部分） SYF 20151117
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.GetM3RiskInput(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            获取心衰评估所需输入（BasicInfoDetail部分） SYF 20151117
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.GetPatientBasicInfo(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            GetBasicInfo WF 2014-12-2  //WF 20151010
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.GetAgeByBirthDay(CDMISrestful.CommonLibrary.DataConnection,System.Int32)">
+            <summary>
+            GetAgeByBirthDay SYF 2015-04-23 //WF 20151010
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="Birthday"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.GetBasicInfo(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            GetBasicInfo WF 2014-12-2  //WF 20151010
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.GetModuleByDoctorId(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            GetModuleByDoctorId WF 2015-06-04 //syf 20151027
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.PsDoctorInfoSetData(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.Int32,System.Int32,System.String,System.Int32,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            王丰 20151010
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <param name="UserName"></param>
+            <param name="Birthday"></param>
+            <param name="Gender"></param>
+            <param name="IDNo"></param>
+            <param name="InvalidFlag"></param>
+            <param name="piUserId"></param>
+            <param name="piTerminalName"></param>
+            <param name="piTerminalIP"></param>
+            <param name="piDeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.GetDoctorInfo(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+             GetDoctorInfo返回医生基本信息 ZYF 2014-12-4 //王丰 20151010
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="DoctorId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.GetHealthCoachList(CDMISrestful.CommonLibrary.DataConnection)">
+            <summary>
+            获取健康专员列表 SYF 20151022
+            </summary>
+            <param name="pclsCache"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.GetHealthCoachInfo(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            获取某专员相关信息 SYF 20151022
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="HealthCoachID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.ReserveHealthCoach(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String,System.String,System.Int32,System.DateTime,System.DateTime,System.String,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            某患者预约某专员 //SYF 20151023 Ps.Appointment插入一条数据
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="DoctorId"></param>
+            <param name="PatientId"></param>
+            <param name="Module"></param>
+            <param name="Description"></param>
+            <param name="Status"></param>
+            <param name="ApplicationTime"></param>
+            <param name="AppointmentTime"></param>
+            <param name="AppointmentAdd"></param>
+            <param name="Redundancy"></param>
+            <param name="revUserId"></param>
+            <param name="TerminalName"></param>
+            <param name="TerminalIP"></param>
+            <param name="DeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.UpdateReservation(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.Int32,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            更新预约状态
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="DoctorId"></param>
+            <param name="PatientId"></param>
+            <param name="Status"></param>
+            <param name="revUserId"></param>
+            <param name="TerminalName"></param>
+            <param name="TerminalIP"></param>
+            <param name="DeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.GetCommentList(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            获取某专员的评论列表 SYF 20151026
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="DoctorId"></param>
+            <param name="CategoryCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.GetCategoryName(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            GetCategoryName WF 2014-12-2 //syf 20151027
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="Code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.GetValue(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String,System.Int32)">
+            <summary>
+             获取需要知道的项目的值 ZC 20150603 //syf20151027
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <param name="CategoryCode"></param>
+            <param name="ItemCode"></param>
+            <param name="ItemSeq"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.GetHealthCoachListByPatient(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            SYF 20151109
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="PatientId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.RemoveHealthCoach(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String)">
+            <summary>
+            解除专员 syf 20151026
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="PatientId"></param>
+            <param name="DoctorId"></param>
+            <param name="Category"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.GetPatientValue(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            获取需要知道的项目的值 SYF 20150423 syf 20151027
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <param name="CategoryCode"></param>
+            <param name="ItemCode"></param>
+            <param name="ItemSeq"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.GetPhoneNoByUserId(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            根据ID获取手机号 LY 2015-10-29
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.GetDoctorInfoDetail(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            获取医生具体信息 SYF 20151112
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.SetComment(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            病人对专员进行评价,并更新总评分和总评价 SYF 20151113
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="DoctorId"></param>
+            <param name="CategoryCode"></param>
+            <param name="Value"></param>
+            <param name="Description"></param>
+            <param name="SortNo"></param>
+            <param name="piUserId"></param>
+            <param name="piTerminalName"></param>
+            <param name="piTerminalIP"></param>
+            <param name="piDeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.GetHModulesByID(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            输入患者Id和专员Id，取出对应模块编码和名称 SYF 20151119
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="PatientId"></param>
+            <param name="DoctorId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.GetPatientsByDoctorId(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            DoctorId,CategoryCode→负责的患者 syf 20151223
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="DoctorId"></param>
+            <param name="CategoryCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.GetPatientNumByDoctorId(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            获取某医生所负责的患者数量
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="DoctorId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.ConsultationGetPatientsByStatus(CDMISrestful.CommonLibrary.DataConnection,System.String,System.Int32)">
+            <summary>
+            根据DoctorId和Status取对应病人列表——SYF 20160107 Status 1：已申请 2：已短信通知 3：已查看 4：已处理 5：拒绝处理 6：申请作废/申请过期 （123未处理，用7表示；456已处理，用8表示）
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="DoctorId"></param>
+            <param name="Status"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.ConsultationChangeStatus(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.Int32,System.Int32,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            syf Consultation改变状态 20160107
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="DoctorId"></param>
+            <param name="PatientId"></param>
+            <param name="SortNo"></param>
+            <param name="Status"></param>
+            <param name="revUserId"></param>
+            <param name="TerminalName"></param>
+            <param name="TerminalIP"></param>
+            <param name="DeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.VitalInfoMethod.SetData(CDMISrestful.CommonLibrary.DataConnection,System.String,System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Ps.VitalSigns.SetData GL 2015-10-10
+            </summary>
+            <param name="UserId"></param>
+            <param name="RecordDate"></param>
+            <param name="RecordTime"></param>
+            <param name="ItemType"></param>
+            <param name="ItemCode"></param>
+            <param name="Value"></param>
+            <param name="Unit"></param>
+            <param name="revUserId"></param>
+            <param name="TerminalName"></param>
+            <param name="TerminalIP"></param>
+            <param name="DeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.VitalInfoMethod.GetVitalSignDates(CDMISrestful.CommonLibrary.DataConnection,System.String,System.Int32,System.Int32)">
+            <summary>
+            获取某日期之后的有数据的起止时间 GL 2015-10-10
+            </summary>
+            <param name="UserId"></param>
+            <param name="date"></param>
+            <param name="Num"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.VitalInfoMethod.GetTypedSignDetailByPeriod(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            从数据库拿出相关数据 并增加type字段 区别收缩压、舒张压、脉率  用于phone 体征详细时刻表 GL 2015-10-10
+            </summary>
+            <param name="UserId"></param>
+            <param name="ItemType"></param>
+            <param name="ItemCode"></param>
+            <param name="StartDate"></param>
+            <param name="EndDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.VitalInfoMethod.GetSignByDay(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            GL 2015-10-10
+            </summary>
+            <param name="UserId"></param>
+            <param name="ItemType"></param>
+            <param name="ItemCode"></param>
+            <param name="RecordDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.VitalInfoMethod.GetLatestVitalSignsByDate(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            获取患者某项生理参数的RecordDate前的最近一条数据 GL 2015-10-10
+            </summary>
+            <param name="UserId"></param>
+            <param name="ItemType"></param>
+            <param name="ItemCode"></param>
+            <param name="RecordDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.VitalInfoMethod.GetLatestPatientVitalSigns(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String)">
+            <summary>
+            获取病人最新体征情况 GL 2015-10-10
+            </summary>
+            <param name="UserId"></param>
+            <param name="ItemType"></param>
+            <param name="ItemCode"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CDMISrestful.DataModels.NewExam">
+            <summary>
+            读取最新的检查信息，用于慢病信息页面问卷的填写
+            </summary>
+        </member>
+        <member name="T:CDMISrestful.DataModels.NewLabTest">
+            <summary>
+            读取最新的化验信息，用于慢病信息页面问卷的填写
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.Message.MessageNo">
+            <summary>
+            消息编号
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.Message.MessageType">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.Message.SendStatus">
+            <summary>
+            发送状态
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.Message.ReadStatus">
+             <summary>
+            阅读状态
+             </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.Message.SendBy">
+            <summary>
+            发送者Id
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.Message.SendByName">
+            <summary>
+            发送者姓名
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.Message.SendDateTime">
+            <summary>
+            发送时间
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.Message.Title">
+            <summary>
+            主题
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.Message.Content">
+            <summary>
+            消息内容
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.Message.Receiver">
+            <summary>
+            接收者Id
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.Message.ReceiverName">
+            <summary>
+            接收者姓名
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.Message.SMSFlag">
+            <summary>
+            短信标志
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.Message.IDFlag">
+            <summary>
+            区分接收和发送
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.Message.Flag">
+             <summary>
+            标志位
+             </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.Message.Count">
+            <summary>
+            未读消息数
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.Message.Time">
+            <summary>
+            显示时间
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.Message.piUserId">
+            <summary>
+            以下4个字段为更新信息输入
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.PlanDeatil.PlanName">
+            <summary>
+            计划名称  “计划”+序号+起止时间  用于计划列表的显示
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.PlanDeatil.PlanNo">
+            <summary>
+            计划编码
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.PlanDeatil.StartDate">
+            <summary>
+            起始日期
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.PlanDeatil.EndDate">
+            <summary>
+            截止日期
+            </summary>
+        </member>
+        <member name="T:CDMISrestful.DataModels.CompliacneDetailByD">
+            <summary>
+            任务依从情况
+            </summary>
+        </member>
+        <member name="T:CDMISrestful.DataModels.TaskComDetailByD">
+            <summary>
+            某天任务依从情况详细 用于弹框显示该天全部详情  目前按类别来分
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.TaskComDetailByD.VitalTaskComList">
+            <summary>
+            体征测量
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.TaskComDetailByD.TaskComByTypeList">
+            <summary>
+            生活方式和用药情况的共同集合类
+            </summary>
+        </member>
+        <member name="T:CDMISrestful.DataModels.TaskComByType">
+            <summary>
+            任务详细依从情况类  适用于体征测量和用药情况 
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.TaskComByType.TaskType">
+            <summary>
+            任务类型：体征测量 生活方式 用药情况   
+            </summary>
+        </member>
+        <member name="T:CDMISrestful.DataModels.TaskCom">
+            <summary>
+            任务详细依从情况类
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.TaskCom.TaskName">
+            <summary>
+            体征名称 药物名称 生活方式名称  
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.TaskCom.TaskStatus">
+            <summary>
+            是否完成 对应勾叉
+            </summary>
+        </member>
+        <member name="T:CDMISrestful.DataModels.VitalTaskCom">
+            <summary>
+            体征任务详细情况类
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.VitalTaskCom.Status">
+            <summary>
+            是否完成 对应勾叉
+            </summary>
+        </member>
+        <member name="T:CDMISrestful.DataModels.ImplementationInfo">
+            <summary>
+            Pad和Web版通用  区别：Web显示计划的任务列表，Pad不
+            </summary>
+        </member>
+        <member name="T:CDMISrestful.DataModels.ImplementationPhone">
+            <summary>
+            Phone版
+            </summary>
+        </member>
+        <member name="T:CDMISrestful.DataModels.PatientInfo1">
+            <summary>
+            病人基本信息
+            </summary>
+        </member>
+        <member name="T:CDMISrestful.DataModels.ChartData">
+            <summary>
+            画图数据集合
+            </summary>
+        </member>
+        <member name="T:CDMISrestful.DataModels.GraphGuide">
+            <summary>
+            血压分级区域和最大最小值
+            </summary>
+        </member>
+        <member name="T:CDMISrestful.DataModels.Guide">
+            <summary>
+            图的区域划分-风险分级、目标线、初始线    目标线、初始线 字体、线密度不同  分级区域颜色不同，文字不同
+            </summary>
+        </member>
+        <member name="T:CDMISrestful.DataModels.TaskDeatil">
+            <summary>
+            某任务的详细属性
+            </summary>
+        </member>
+        <member name="T:CDMISrestful.DataModels.Task">
+            <summary>
+            某类型任务的集合
+            </summary>
+        </member>
+        <member name="T:CDMISrestful.DataModels.SignShow">
+            <summary>
+            图上体征切换显示
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.SetVitalInfo.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.SetVitalInfo.RecordDate">
+            <summary>
+            记录日期
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.SetVitalInfo.RecordTime">
+            <summary>
+            记录时间
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.SetVitalInfo.ItemType">
+            <summary>
+            记录类型
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.SetVitalInfo.ItemCode">
+            <summary>
+            记录项目
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.SetVitalInfo.Value">
+            <summary>
+            项目数据
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.SetVitalInfo.Unit">
+            <summary>
+            项目单位
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.VitalInfo.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.VitalInfo.RecordDate">
+            <summary>
+            记录日期
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.VitalInfo.RecordTime">
+            <summary>
+            记录时间
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.VitalInfo.ItemType">
+            <summary>
+            记录类型
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.VitalInfo.ItemCode">
+            <summary>
+            记录项目
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.VitalInfo.Value">
+            <summary>
+            项目数据
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.VitalInfo.Unit">
+            <summary>
+            项目单位
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.VitalInfo.StartDate">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.VitalInfo.EndDate">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.VitalInfo.SignType">
+            <summary>
+            参数类型
+            </summary>
+        </member>
+        <member name="T:CDMISrestful.DataModels.SignDetailByP">
+            <summary>
+            高血压体征详细-日期段
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.SignDetailByP.NextStartDate">
+            <summary>
+            需要查询起始的时间
+            </summary>
+        </member>
+        <member name="T:CDMISrestful.DataModels.SignDetailByD">
+            <summary>
+            高血压体征详细-某天
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.SignDetailByD.Date">
+            <summary>
+            日期
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.SignDetailByD.WeekDay">
+            <summary>
+            星期几
+            </summary>
+        </member>
+        <member name="T:CDMISrestful.DataModels.SignDetail">
+            <summary>
+            高血压体征详细-到分 
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.SignDetail.DetailTime">
+            <summary>
+            详细时间 到时分
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.SignDetail.SBPValue">
+            <summary>
+            收缩压
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.SignDetail.DBPValue">
+            <summary>
+            舒张压
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.SignDetail.PulseValue">
+            <summary>
+            脉率  "78"
+            </summary>
+        </member>
+        <member name="P:CDMISrestful.DataModels.CmMstInfoItem.CategoryCode">
+            <summary>
+            模块大分类，如M1，M2
+            </summary>
+        </member>
+        <member name="M:CDMISrestful.Models.DictRepository.GetHypertensionDrugTypeNameList(CDMISrestful.CommonLibrary.DataConnection)">
+            <summary>
+            获取高血压药物类型名称列表 LY 2015-10-14
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Models.DictRepository.GetHypertensionDrug(CDMISrestful.CommonLibrary.DataConnection)">
+            <summary>
+            获取高血压药物名称列表 LY 2015-10-14
+            </summary>
+            <param name="Type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Models.DictRepository.GetDiabetesDrugTypeNameList(CDMISrestful.CommonLibrary.DataConnection)">
+            <summary>
+            获取糖尿病药物类型名称列表 LY 2015-10-14
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Models.DictRepository.GetDiabetesDrug(CDMISrestful.CommonLibrary.DataConnection)">
+            <summary>
+            获取糖尿病药物名称列表 LY 2015-10-14
+            </summary>
+            <param name="Type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Models.DictRepository.GetTypeList(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            获取某个分类的类别 LY 2015-10-14
+            </summary>
+            <param name="Category"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Models.DictRepository.GetBloodPressure(CDMISrestful.CommonLibrary.DataConnection)">
+            <summary>
+            获取血压等级字典表的所有信息 LY 2015-10-13
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Models.IVitalInfoRepository.GetLatestPatientVitalSigns(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String)">
+            <summary>
+            获取最新一条体征信息
+            </summary>
+            <param name="UserId"></param>
+            <param name="ItemType"></param>
+            <param name="ItemCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Models.MessageRepository.GetSMSDialogue(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            获取消息对话 GL 2015-10-10
+            </summary>
+            <param name="Reciever"></param>
+            <param name="SendBy"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Models.MessageRepository.SetSMS(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            将消息写入数据库并获取发送时间与显示时间 GL 2015-10-10(修改：2015-10-26)
+            </summary>
+            <param name="SendBy"></param>
+            <param name="Reciever"></param>
+            <param name="Content"></param>
+            <param name="piUserId"></param>
+            <param name="piTerminalName"></param>
+            <param name="piTerminalIP"></param>
+            <param name="piDeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Models.MessageRepository.GetLatestSMS(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            获取最新一条消息 GL 2015-10-10
+            </summary>
+            <param name="DoctorId"></param>
+            <param name="PatientId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Models.MessageRepository.SetSMSRead(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            将多条消息设为已读 GL 2015-10-10
+            </summary>
+            <param name="Reciever"></param>
+            <param name="SendBy"></param>
+            <param name="piUserId"></param>
+            <param name="piTerminalName"></param>
+            <param name="piTerminalIP"></param>
+            <param name="piDeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Models.MessageRepository.GetSMSCountForOne(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            获取一对一未读消息数 GL 2015-10-10
+            </summary>
+            <param name="Reciever"></param>
+            <param name="SendBy"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Models.MessageRepository.GetSMSList(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            获取消息联系人列表 GL 2015-10-10
+            </summary>
+            <param name="DoctorId"></param>
+            <param name="CategoryCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Models.MessageRepository.GetSMSCountForAll(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            获取某医生未读消息总数 GL 2015-10-10
+            </summary>
+            <param name="DoctorId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Models.ModuleInfoRepository.GetItemInfoByPIdAndModule(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            输入PatientId和CategoryCode，获取患者已经购买的某个模块的详细信息 LY 2015-10-14
+            </summary>
+            <param name="UserId"></param>
+            <param name="CategoryCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Models.ModuleInfoRepository.GetMstInfoItemByCategoryCode(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            获取模块关注详细信息 LY 2015-10-14
+            </summary>
+            <param name="CategoryCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Models.ModuleInfoRepository.SynBasicInfoDetail(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            同步患者购买模块下的某些信息 LY 2015-10-14
+            </summary>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Models.PlanInfoRepository.GetComplianceAllSignsListByPeriod(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            需要修改 20151029
+            </summary>
+            <param name="UserId"></param>
+            <param name="PlanNo"></param>
+            <param name="StartDate"></param>
+            <param name="EndDate"></param>
+            <param name="ItemType"></param>
+            <param name="ItemCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Models.PlanInfoRepository.GetDTaskByPlanNo(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            获取计划修改前后的不同任务 syf 20151223
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="PlanNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Models.RiskInfoRepository.GetDescription(CDMISrestful.CommonLibrary.DataConnection,System.Int32)">
+            <summary>
+            根据收缩压获取血压等级说明 LY 2015-10-13
+            </summary>
+            <param name="SBP"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Models.RiskInfoRepository.SetRiskResult(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String,System.DateTime,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            插入风险评估结果 LY 2015-10-13
+            </summary>
+            <param name="UserId"></param>
+            <param name="AssessmentType"></param>
+            <param name="AssessmentName"></param>
+            <param name="AssessmentTime"></param>
+            <param name="Result"></param>
+            <param name="revUserId"></param>
+            <param name="TerminalName"></param>
+            <param name="TerminalIP"></param>
+            <param name="DeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Models.RiskInfoRepository.GetRiskResult(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            根据UserId获取最新风险评估结果 LY 2015-10-13
+            </summary>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Models.RiskInfoRepository.GetM1Risk(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            获取高血压风险评估结果 SYF 2015-11-16
+            </summary>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Models.RiskInfoRepository.GetM3RiskInput(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            获取心衰模型评估的所有输入 SYF 20151117
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Models.RiskInfoRepository.GetM3Risk(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            获取心衰风险评估结果 SYF 2015-11-17
+            </summary>
+            <param name="pclsCache"></param>
+            <param name="UserId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Models.ServiceRepository.PushNotification(System.String,System.String,System.String)">
+            <summary>
+            推送 通知
+            </summary>
+            <param name="platform"></param>
+            <param name="Alias"></param>
+            <param name="notification"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Models.ServiceRepository.GetPatientInfo(CDMISrestful.CommonLibrary.DataConnection,System.String)">
+            <summary>
+            浙大输出接口 LY 2015-10-29
+            </summary>
+            <param name="PatientId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Models.ServiceRepository.VitalSignFromZKY(CDMISrestful.CommonLibrary.DataConnection,CDMISrestful.DataModels.VitalSignFromDevice)">
+            <summary>
+            浙大接收接口处理 LY 2015-10-31
+            </summary>
+            <param name="VitalSigns"></param>
+            <param name="revUserId"></param>
+            <param name="TerminalName"></param>
+            <param name="TerminalIP"></param>
+            <param name="DeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Models.UsersRepository.IsTokenValid(System.String)">
+            <summary>
+            验证token是否正确 syf 2015-10-13
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Models.UsersRepository.Register(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="PwType"></param>
+            <param name="userId">手机号/邮箱等</param>
+            <param name="UserName">用户姓名</param>
+            <param name="Password"></param>
+            <param name="role"></param>
+            <param name="revUserId"></param>
+            <param name="TerminalName"></param>
+            <param name="TerminalIP"></param>
+            <param name="DeviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Models.UsersRepository.Verification(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String)">
+            <summary>
+            验证用户是否存在
+            </summary>
+            <param name="userId">手机号/邮箱等</param>
+            <param name="PwType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.Models.UsersRepository.SetPatBasicInfoDetail(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String,System.Int32,System.String,System.String,System.Int32,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            插入患者详细信息 LY 2015-10-14
+            </summary>
+            <param name="Patient"></param>
+            <param name="CategoryCode"></param>
+            <param name="ItemCode"></param>
+            <param name="ItemSeq"></param>
+            <param name="Value"></param>
+            <param name="Description"></param>
+            <param name="SortNo"></param>
+            <param name="revUserId"></param>
+            <param name="TerminalName"></param>
+            <param name="TerminalIP"></param>
+            <param name="DeviceType"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

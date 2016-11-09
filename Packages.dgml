@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="CDMISrestful" Label="CDMISrestful" Category="项目" />
+    <Node Id="Antlr 3.4.1.9004" Label="Antlr 3.4.1.9004" Category="包" />
+    <Node Id="bootstrap 3.0.0" Label="bootstrap 3.0.0" Category="包" />
+    <Node Id="jQuery 1.10.2" Label="jQuery 1.10.2" Category="包" />
+    <Node Id="jQuery.UI.Combined 1.9.2" Label="jQuery.UI.Combined 1.9.2" Category="包" />
+    <Node Id="knockoutjs 3.2.0" Label="knockoutjs 3.2.0" Category="包" />
+    <Node Id="matthewcv.WebApiTestClient 1.2.0" Label="matthewcv.WebApiTestClient 1.2.0" Category="包" />
+    <Node Id="Microsoft.AspNet.Cors 5.2.3" Label="Microsoft.AspNet.Cors 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.Mvc 5.2.3" Label="Microsoft.AspNet.Mvc 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.Mvc.zh-Hans 5.2.3" Label="Microsoft.AspNet.Mvc.zh-Hans 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.OData 5.7.0" Label="Microsoft.AspNet.OData 5.7.0" Category="包" />
+    <Node Id="Microsoft.AspNet.Razor 3.2.3" Label="Microsoft.AspNet.Razor 3.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.Razor.zh-Hans 3.2.3" Label="Microsoft.AspNet.Razor.zh-Hans 3.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.Web.Optimization 1.1.1" Label="Microsoft.AspNet.Web.Optimization 1.1.1" Category="包" />
+    <Node Id="Microsoft.AspNet.Web.Optimization.zh-Hans 1.1.1" Label="Microsoft.AspNet.Web.Optimization.zh-Hans 1.1.1" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi 5.0.0" Label="Microsoft.AspNet.WebApi 5.0.0" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Client 5.2.3" Label="Microsoft.AspNet.WebApi.Client 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Client.zh-Hans 5.2.3" Label="Microsoft.AspNet.WebApi.Client.zh-Hans 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Core 5.2.3" Label="Microsoft.AspNet.WebApi.Core 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Core.zh-Hans 5.2.3" Label="Microsoft.AspNet.WebApi.Core.zh-Hans 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Cors 5.2.3" Label="Microsoft.AspNet.WebApi.Cors 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.HelpPage 5.2.3" Label="Microsoft.AspNet.WebApi.HelpPage 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.OData 5.7.0" Label="Microsoft.AspNet.WebApi.OData 5.7.0" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.WebHost 5.2.3" Label="Microsoft.AspNet.WebApi.WebHost 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.WebHost.zh-Hans 5.2.3" Label="Microsoft.AspNet.WebApi.WebHost.zh-Hans 5.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebPages 3.2.3" Label="Microsoft.AspNet.WebPages 3.2.3" Category="包" />
+    <Node Id="Microsoft.AspNet.WebPages.zh-Hans 3.2.3" Label="Microsoft.AspNet.WebPages.zh-Hans 3.2.3" Category="包" />
+    <Node Id="Microsoft.Data.Edm 5.6.4" Label="Microsoft.Data.Edm 5.6.4" Category="包" />
+    <Node Id="Microsoft.Data.OData 5.6.4" Label="Microsoft.Data.OData 5.6.4" Category="包" />
+    <Node Id="Microsoft.OData.Core 6.13.0" Label="Microsoft.OData.Core 6.13.0" Category="包" />
+    <Node Id="Microsoft.OData.Edm 6.13.0" Label="Microsoft.OData.Edm 6.13.0" Category="包" />
+    <Node Id="Microsoft.Spatial 6.13.0" Label="Microsoft.Spatial 6.13.0" Category="包" />
+    <Node Id="Microsoft.Web.Infrastructure 1.0.0.0" Label="Microsoft.Web.Infrastructure 1.0.0.0" Category="包" />
+    <Node Id="Modernizr 2.6.2" Label="Modernizr 2.6.2" Category="包" />
+    <Node Id="Newtonsoft.Json 6.0.8" Label="Newtonsoft.Json 6.0.8" Category="包" />
+    <Node Id="Respond 1.2.0" Label="Respond 1.2.0" Category="包" />
+    <Node Id="System.Spatial 5.6.4" Label="System.Spatial 5.6.4" Category="包" />
+    <Node Id="WebApiTestClient 1.1.1" Label="WebApiTestClient 1.1.1" Category="包" />
+    <Node Id="WebApiTestOnHelpPage 1.3.4" Label="WebApiTestOnHelpPage 1.3.4" Category="包" />
+    <Node Id="WebGrease 1.5.2" Label="WebGrease 1.5.2" Category="包" />
+  </Nodes>
+  <Links>
+    <Link Source="jQuery.UI.Combined 1.9.2" Target="jQuery 1.10.2" Category="程序包依赖项" />
+    <Link Source="matthewcv.WebApiTestClient 1.2.0" Target="Microsoft.AspNet.WebApi.WebHost 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Mvc 5.2.3" Target="Microsoft.AspNet.WebPages 3.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Mvc 5.2.3" Target="Microsoft.AspNet.Razor 3.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Mvc.zh-Hans 5.2.3" Target="Microsoft.AspNet.Mvc 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.OData 5.7.0" Target="Microsoft.AspNet.WebApi.Client 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.OData 5.7.0" Target="Microsoft.AspNet.WebApi.Core 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.OData 5.7.0" Target="Microsoft.OData.Core 6.13.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Razor.zh-Hans 3.2.3" Target="Microsoft.AspNet.Razor 3.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Web.Optimization 1.1.1" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Web.Optimization 1.1.1" Target="WebGrease 1.5.2" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Web.Optimization.zh-Hans 1.1.1" Target="Microsoft.AspNet.Web.Optimization 1.1.1" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi 5.0.0" Target="Microsoft.AspNet.WebApi.WebHost 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 5.2.3" Target="Newtonsoft.Json 6.0.8" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 5.2.3" Target="Newtonsoft.Json 6.0.8" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Client.zh-Hans 5.2.3" Target="Microsoft.AspNet.WebApi.Client 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Core 5.2.3" Target="Microsoft.AspNet.WebApi.Client 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Core.zh-Hans 5.2.3" Target="Microsoft.AspNet.WebApi.Core 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Cors 5.2.3" Target="Microsoft.AspNet.WebApi.Core 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Cors 5.2.3" Target="Microsoft.AspNet.Cors 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.HelpPage 5.2.3" Target="Microsoft.AspNet.WebApi.WebHost 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.HelpPage 5.2.3" Target="Microsoft.AspNet.Mvc 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.HelpPage 5.2.3" Target="Microsoft.AspNet.Razor 3.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.OData 5.7.0" Target="Microsoft.AspNet.WebApi.Client 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.OData 5.7.0" Target="Microsoft.AspNet.WebApi.Core 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.OData 5.7.0" Target="Microsoft.Data.OData 5.6.4" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.WebHost 5.2.3" Target="Microsoft.AspNet.WebApi.Core 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.WebHost.zh-Hans 5.2.3" Target="Microsoft.AspNet.WebApi.WebHost 5.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebPages 3.2.3" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebPages 3.2.3" Target="Microsoft.AspNet.Razor 3.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebPages.zh-Hans 3.2.3" Target="Microsoft.AspNet.WebPages 3.2.3" Category="程序包依赖项" />
+    <Link Source="Microsoft.Data.OData 5.6.4" Target="System.Spatial 5.6.4" Category="程序包依赖项" />
+    <Link Source="Microsoft.Data.OData 5.6.4" Target="Microsoft.Data.Edm 5.6.4" Category="程序包依赖项" />
+    <Link Source="Microsoft.OData.Core 6.13.0" Target="Microsoft.Spatial 6.13.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.OData.Core 6.13.0" Target="Microsoft.OData.Edm 6.13.0" Category="程序包依赖项" />
+    <Link Source="WebApiTestClient 1.1.1" Target="Microsoft.AspNet.WebApi.HelpPage 5.2.3" Category="程序包依赖项" />
+    <Link Source="WebApiTestClient 1.1.1" Target="knockoutjs 3.2.0" Category="程序包依赖项" />
+    <Link Source="WebApiTestClient 1.1.1" Target="jQuery.UI.Combined 1.9.2" Category="程序包依赖项" />
+    <Link Source="WebApiTestOnHelpPage 1.3.4" Target="jQuery.UI.Combined 1.9.2" Category="程序包依赖项" />
+    <Link Source="WebApiTestOnHelpPage 1.3.4" Target="Microsoft.AspNet.WebApi.HelpPage 5.2.3" Category="程序包依赖项" />
+    <Link Source="WebApiTestOnHelpPage 1.3.4" Target="knockoutjs 3.2.0" Category="程序包依赖项" />
+    <Link Source="WebGrease 1.5.2" Target="Antlr 3.4.1.9004" Category="程序包依赖项" />
+    <Link Source="WebGrease 1.5.2" Target="Newtonsoft.Json 6.0.8" Category="程序包依赖项" />
+    <Link Source="CDMISrestful" Target="bootstrap 3.0.0" Category="安装的程序包" />
+    <Link Source="CDMISrestful" Target="matthewcv.WebApiTestClient 1.2.0" Category="安装的程序包" />
+    <Link Source="CDMISrestful" Target="Microsoft.AspNet.Mvc.zh-Hans 5.2.3" Category="安装的程序包" />
+    <Link Source="CDMISrestful" Target="Microsoft.AspNet.OData 5.7.0" Category="安装的程序包" />
+    <Link Source="CDMISrestful" Target="Microsoft.AspNet.Razor.zh-Hans 3.2.3" Category="安装的程序包" />
+    <Link Source="CDMISrestful" Target="Microsoft.AspNet.Web.Optimization.zh-Hans 1.1.1" Category="安装的程序包" />
+    <Link Source="CDMISrestful" Target="Microsoft.AspNet.WebApi 5.0.0" Category="安装的程序包" />
+    <Link Source="CDMISrestful" Target="Microsoft.AspNet.WebApi.Client.zh-Hans 5.2.3" Category="安装的程序包" />
+    <Link Source="CDMISrestful" Target="Microsoft.AspNet.WebApi.Core.zh-Hans 5.2.3" Category="安装的程序包" />
+    <Link Source="CDMISrestful" Target="Microsoft.AspNet.WebApi.Cors 5.2.3" Category="安装的程序包" />
+    <Link Source="CDMISrestful" Target="Microsoft.AspNet.WebApi.OData 5.7.0" Category="安装的程序包" />
+    <Link Source="CDMISrestful" Target="Microsoft.AspNet.WebApi.WebHost.zh-Hans 5.2.3" Category="安装的程序包" />
+    <Link Source="CDMISrestful" Target="Microsoft.AspNet.WebPages.zh-Hans 3.2.3" Category="安装的程序包" />
+    <Link Source="CDMISrestful" Target="Modernizr 2.6.2" Category="安装的程序包" />
+    <Link Source="CDMISrestful" Target="Respond 1.2.0" Category="安装的程序包" />
+    <Link Source="CDMISrestful" Target="WebApiTestClient 1.1.1" Category="安装的程序包" />
+    <Link Source="CDMISrestful" Target="WebApiTestOnHelpPage 1.3.4" Category="安装的程序包" />
+  </Links>
+  <Categories>
+    <Category Id="项目" />
+    <Category Id="包" />
+  </Categories>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="项目" ValueLabel="True">
+      <Condition Expression="HasCategory('项目')" />
+      <Setter Property="Background" Value="Blue" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="程序包依赖项" ValueLabel="True">
+      <Condition Expression="HasCategory('程序包依赖项')" />
+      <Setter Property="Background" Value="Yellow" />
+    </Style>
+  </Styles>
+</DirectedGraph>

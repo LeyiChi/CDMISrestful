@@ -1,0 +1,8 @@
+2016/01/05 13:11:40	::1             	ERR	MessageMethod.PsNotificationSetData                         	数据库操作异常！ error information : 该字符串未被识别为有效的 DateTime。
+   在 System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   在 System.DateTime.Parse(String s)
+   在 CDMISrestful.DataMethod.MessageMethod.PsNotificationSetData(DataConnection pclsCache, String AccepterID, String NotificationType, String Title, String Description, String SendTime, String SenderID, String Status, String Redundancy, String revUserId, String TerminalName, String TerminalIP, Int32 DeviceType) 位置 f:\Work\chronic disease management\github\CDMISrestful\CDMISrestful\DataMethod\MessageMethod.cs:行号 334
+2016/01/05 13:13:27	::1             	ERR	MessageMethod.PsNotificationSetData                         	数据库操作异常！ error information : 该字符串未被识别为有效的 DateTime。
+   在 System.DateTimeParse.Parse(String s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   在 System.DateTime.Parse(String s)
+   在 CDMISrestful.DataMethod.MessageMethod.PsNotificationSetData(DataConnection pclsCache, String AccepterID, String NotificationType, String Title, String Description, String SendTime, String SenderID, String Status, String Redundancy, String revUserId, String TerminalName, String TerminalIP, Int32 DeviceType) 位置 f:\Work\chronic disease management\github\CDMISrestful\CDMISrestful\DataMethod\MessageMethod.cs:行号 334

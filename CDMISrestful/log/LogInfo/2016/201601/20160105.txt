@@ -1,0 +1,75 @@
+
+ 
+记录时间：2016-01-05 13:09:56,577 
+线程ID:[8] 
+日志级别：  INFO  
+日志描述：
+            Action执行时间监控：
+            ControllerName：PlanInfoController
+            ActionName:GetTaskCompliance
+            开始时间：2016/1/5 13:09:53
+            结束时间：2016/1/5 13:09:56
+            总 时 间：3.0124355秒
+            Action参数：PlanNo=PLN201512100001
+            Http请求头:Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN, zh; q=0.8
+Host: localhost:7516
+Referer: http://localhost:7516/Help/Api/GET-Api-v1-PlanInfo-TaskCompliances_PlanNo
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2427.7 Safari/537.36
+
+            客户端IP：::1,
+            HttpMethod:GET
+                    
+ 
+
+ 
+记录时间：2016-01-05 13:11:48,633 
+线程ID:[9] 
+日志级别：  INFO  
+日志描述：
+            Action执行时间监控：
+            ControllerName：ServiceController
+            ActionName:GetNotification
+            开始时间：2016/1/5 13:11:14
+            结束时间：2016/1/5 13:11:48
+            总 时 间：34.5544979秒
+            Action参数：platform=android&Alias=U201511170002&notification=哈哈哈&title=哈哈哈&id=U201511170002
+            Http请求头:Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN, zh; q=0.8
+Host: localhost:7516
+Referer: http://localhost:7516/Help/Api/GET-Api-v1-Service-PushNotification_platform_Alias_notification_title_id
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2427.7 Safari/537.36
+
+            客户端IP：::1,
+            HttpMethod:GET
+                    
+ 
+
+ 
+记录时间：2016-01-05 13:13:27,138 
+线程ID:[9] 
+日志级别：  INFO  
+日志描述：
+            Action执行时间监控：
+            ControllerName：ServiceController
+            ActionName:GetNotification
+            开始时间：2016/1/5 13:11:51
+            结束时间：2016/1/5 13:13:27
+            总 时 间：95.9817179秒
+            Action参数：platform=android&Alias=U201511170002&notification=哈哈哈&title=哈哈哈&id=U201511170002
+            Http请求头:Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN, zh; q=0.8
+Host: localhost:7516
+Referer: http://localhost:7516/Help/Api/GET-Api-v1-Service-PushNotification_platform_Alias_notification_title_id
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2427.7 Safari/537.36
+
+            客户端IP：::1,
+            HttpMethod:GET
+                    
+ 

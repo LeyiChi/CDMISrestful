@@ -1,0 +1,24 @@
+2015/11/17 21:12:32	::1             	ERR	UsersMethod.GetM1RiskInput                                  	数据库操作异常！ error information : 值不能为 null。
+参数名: String
+   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.Int32.Parse(String s)
+   在 CDMISrestful.DataMethod.UsersMethod.GetM1RiskInput(DataConnection pclsCache, String UserId) 位置 f:\Work\chronic disease management\github\CDMISrestful\CDMISrestful\DataMethod\UsersMethod.cs:行号 702
+2015/11/17 21:19:05	::1             	ERR	UsersMethod.GetM1RiskInput                                  	数据库操作异常！ error information : 值不能为 null。
+参数名: String
+   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.Int32.Parse(String s)
+   在 CDMISrestful.DataMethod.UsersMethod.GetM1RiskInput(DataConnection pclsCache, String UserId) 位置 f:\Work\chronic disease management\github\CDMISrestful\CDMISrestful\DataMethod\UsersMethod.cs:行号 702
+2015/11/17 21:23:25	::1             	ERR	UsersMethod.GetM1RiskInput                                  	数据库操作异常！ error information : 值不能为 null。
+参数名: String
+   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.Int32.Parse(String s)
+   在 CDMISrestful.DataMethod.UsersMethod.GetM1RiskInput(DataConnection pclsCache, String UserId) 位置 f:\Work\chronic disease management\github\CDMISrestful\CDMISrestful\DataMethod\UsersMethod.cs:行号 702
+2015/11/17 21:25:29	::1             	ERR	UsersMethod.GetM1RiskInput                                  	数据库操作异常！ error information : 值不能为 null。
+参数名: String
+   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.Int32.Parse(String s)
+   在 CDMISrestful.DataMethod.UsersMethod.GetM1RiskInput(DataConnection pclsCache, String UserId) 位置 f:\Work\chronic disease management\github\CDMISrestful\CDMISrestful\DataMethod\UsersMethod.cs:行号 702

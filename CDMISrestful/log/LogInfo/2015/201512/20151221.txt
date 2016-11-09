@@ -1,0 +1,50 @@
+
+ 
+记录时间：2015-12-21 14:54:49,934 
+线程ID:[11] 
+日志级别：  INFO  
+日志描述：
+            Action执行时间监控：
+            ControllerName：MessageController
+            ActionName:GetDataByStatus
+            开始时间：2015/12/21 14:54:38
+            结束时间：2015/12/21 14:54:49
+            总 时 间：11.1082346秒
+            Action参数：AccepterID=DOC201506180002&NotificationType=Appointment&Status={Status}
+            Http请求头:Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN, zh; q=0.8
+Host: localhost:7516
+Referer: http://localhost:7516/Help/Api/GET-Api-v1-MessageInfo-GetDataByStatus_AccepterID_NotificationType_Status
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2427.7 Safari/537.36
+
+            客户端IP：::1,
+            HttpMethod:GET
+                    
+ 
+
+ 
+记录时间：2015-12-21 14:55:06,611 
+线程ID:[5] 
+日志级别：  INFO  
+日志描述：
+            Action执行时间监控：
+            ControllerName：MessageController
+            ActionName:GetDataByStatus
+            开始时间：2015/12/21 14:55:06
+            结束时间：2015/12/21 14:55:06
+            总 时 间：0.0330297秒
+            Action参数：AccepterID=U201511170002&NotificationType=Appointment&Status={Status}
+            Http请求头:Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN, zh; q=0.8
+Host: localhost:7516
+Referer: http://localhost:7516/Help/Api/GET-Api-v1-MessageInfo-GetDataByStatus_AccepterID_NotificationType_Status
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2427.7 Safari/537.36
+
+            客户端IP：::1,
+            HttpMethod:GET
+                    
+ 

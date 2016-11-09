@@ -1,0 +1,16 @@
+2015/12/28 15:48:02	::1             	ERR	                                                            	数据库连接失败！ error information : Cache Security Error
+   在 InterSystems.Data.CacheClient.CacheADOConnection.Open()
+   在 InterSystems.Data.CacheClient.CacheConnection.Open(Boolean useCache)
+   在 InterSystems.Data.CacheClient.CacheConnection.Open()
+   在 CDMISrestful.CommonLibrary.DataConnection.Connect() 位置 f:\Work\chronic disease management\github\CDMISrestful\CDMISrestful\CommonLibrary\DataConnection.cs:行号 51
+2015/12/28 15:48:02	::1             	ERR	PlanInfoMethod.GetLogPlanInfo                               	数据库操作异常！ error information : Cache Security Error
+   在 CDMISrestful.CommonLibrary.DataConnection.Connect() 位置 f:\Work\chronic disease management\github\CDMISrestful\CDMISrestful\CommonLibrary\DataConnection.cs:行号 69
+   在 CDMISrestful.DataMethod.PlanInfoMethod.GetLogPlanInfo(DataConnection pclsCache, String PlanNo) 位置 f:\Work\chronic disease management\github\CDMISrestful\CDMISrestful\DataMethod\PlanInfoMethod.cs:行号 3116
+2015/12/28 15:48:57	::1             	ERR	                                                            	数据库连接失败！ error information : Cache Security Error
+   在 InterSystems.Data.CacheClient.CacheADOConnection.Open()
+   在 InterSystems.Data.CacheClient.CacheConnection.Open(Boolean useCache)
+   在 InterSystems.Data.CacheClient.CacheConnection.Open()
+   在 CDMISrestful.CommonLibrary.DataConnection.Connect() 位置 f:\Work\chronic disease management\github\CDMISrestful\CDMISrestful\CommonLibrary\DataConnection.cs:行号 51
+2015/12/28 15:48:57	::1             	ERR	PlanInfoMethod.GetLogPlanInfo                               	数据库操作异常！ error information : Cache Security Error
+   在 CDMISrestful.CommonLibrary.DataConnection.Connect() 位置 f:\Work\chronic disease management\github\CDMISrestful\CDMISrestful\CommonLibrary\DataConnection.cs:行号 69
+   在 CDMISrestful.DataMethod.PlanInfoMethod.GetLogPlanInfo(DataConnection pclsCache, String PlanNo) 位置 f:\Work\chronic disease management\github\CDMISrestful\CDMISrestful\DataMethod\PlanInfoMethod.cs:行号 3116
