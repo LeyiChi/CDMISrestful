@@ -526,5 +526,37 @@ namespace CDMISrestful.Controllers
              return repository.ConsultationGetDataByDP(pclsCache, DoctorId, PatientId);
          }
 
+         /// <summary>
+         /// 根据DoctorId, PatientId(not required), status(not required)获取所有信息 zy 20170117
+         /// </summary>
+         /// <param name="strHealthCoachId"></param>
+         /// <param name="strPatientId"></param>
+         /// <param name="strstatus"></param>
+         /// <returns></returns>
+         [Route("Api/v1/Users/Consultation")]
+         public List<ConsultationHid> GetConsultationDataByHidPid(string HealthCoachId, string PatientId, string strstatus)
+         {
+             string HealthCoachId1 = HealthCoachId.ToUpper();
+
+             if ((PatientId == "{PatientId}") && (strstatus == "{strstatus}"))
+             {
+                 return repository.GetConsultationDataByHidPid1(pclsCache, HealthCoachId1);
+             }
+             else if ((PatientId == "{PatientId}") && (strstatus != "{strstatus}"))
+             {
+                 int status = int.Parse(strstatus);
+                 return repository.GetConsultationDataByHidPid2(pclsCache, HealthCoachId1, status);
+             }
+             else if ((strstatus == "{strstatus}") && (PatientId != "{PatientId}"))
+             {
+                 return repository.GetConsultationDataByHidPid3(pclsCache, HealthCoachId1, PatientId);
+             }
+             else
+             {
+                 int status = int.Parse(strstatus);
+                 return repository.GetConsultationDataByHidPid4(pclsCache, HealthCoachId1, PatientId, status);
+             }
+         }
+
     }
 }
