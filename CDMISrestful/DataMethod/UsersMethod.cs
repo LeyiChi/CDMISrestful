@@ -1632,6 +1632,56 @@ namespace CDMISrestful.DataMethod
         //    }
         //}
 
+        /// <summary>
+        /// GetDoctorList CSQ 20170113 获取医生列表
+        /// </summary>
+        /// <returns></returns>
+        public List<Doctor> GetDoctorList(DataConnection pclsCache)
+        {
+            List<Doctor> items = new List<Doctor>();
+            CacheCommand cmd = null;
+            CacheDataReader cdr = null;
+            try
+            {
+                if (!pclsCache.Connect())
+                {
+                    return null;
+                }
+                cmd = new CacheCommand();
+                cmd = Ps.DoctorInfo.GetDoctorList(pclsCache.CacheConnectionObject);
+              
+                cdr = cmd.ExecuteReader();
+                while (cdr.Read())
+                {
+                    Doctor item = new Doctor();
+                    item.DoctorId = cdr["DoctorId"].ToString();
+                    item.DoctorName = cdr["DoctorName"].ToString();             
+                    items.Add(item);
+                }
+                return items;
+            }
+            catch (Exception ex)
+            {
+                HygeiaComUtility.WriteClientLog(HygeiaEnum.LogType.ErrorLog, "UsersMethod.GetDoctorList", "数据库操作异常！ error information : " + ex.Message + Environment.NewLine + ex.StackTrace);
+                return null;
+            }
+            finally
+            {
+                if ((cdr != null))
+                {
+                    cdr.Close();
+                    cdr.Dispose(true);
+                    cdr = null;
+                }
+                if ((cmd != null))
+                {
+                    cmd.Parameters.Clear();
+                    cmd.Dispose();
+                    cmd = null;
+                }
+                pclsCache.DisConnect();
+            }
+        }
         #endregion
 
         #region<PsAppointment>

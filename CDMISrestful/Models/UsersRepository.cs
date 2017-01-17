@@ -969,5 +969,9 @@ namespace CDMISrestful.Models
             return new UsersMethod().ConsultationGetDataByDP(pclsCache, DoctorId, PatientId);
         }
 
+        public List<Doctor> GetDoctorList(DataConnection pclsCache)
+        {
+            return new UsersMethod().GetDoctorList(pclsCache);
+        }
     }
 }

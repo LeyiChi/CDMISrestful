@@ -14,6 +14,8 @@ namespace CDMISrestful.Models
         ForToken LogOn(DataConnection pclsCache, string PwType, string userId, string password, string role);
         //string IsUserValid(string userId, string password);
 
+        List<Doctor> GetDoctorList(DataConnection pclsCache);
+
         int Register(DataConnection pclsCache, string PwType, string userId, string UserName, string Password, string role, string revUserId, string TerminalName, string TerminalIP, int DeviceType);
         int Activition(DataConnection pclsCache, string UserId, string InviteCode, string role);
         int ChangePassword(DataConnection pclsCache, string OldPassword, string NewPassword, string UserId, string revUserId, string TerminalName, string TerminalIP, int DeviceType);

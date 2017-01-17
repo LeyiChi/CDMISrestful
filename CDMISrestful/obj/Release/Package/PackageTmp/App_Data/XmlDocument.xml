@@ -1356,6 +1356,13 @@
             <param name="UserId"></param>
             <returns></returns>
         </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.GetDoctorList">
+            <summary>
+            csq 20170113 获取医生列表
+            </summary>
+            <param name="pclsCache"></param>
+            <returns></returns>
+        </member>
         <member name="M:CDMISrestful.Controllers.UsersController.GetDoctorDetailInfo(System.String)">
             <summary>
             根据用户名获取医生身份信息
@@ -2614,6 +2621,12 @@
             </summary>
             <param name="pclsCache"></param>
             <param name="HealthCoachID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CDMISrestful.DataMethod.UsersMethod.GetDoctorList(CDMISrestful.CommonLibrary.DataConnection)">
+            <summary>
+            GetDoctorList CSQ 20170113 获取医生列表
+            </summary>
             <returns></returns>
         </member>
         <member name="M:CDMISrestful.DataMethod.UsersMethod.ReserveHealthCoach(CDMISrestful.CommonLibrary.DataConnection,System.String,System.String,System.String,System.String,System.Int32,System.DateTime,System.DateTime,System.String,System.String,System.String,System.String,System.String,System.Int32)">

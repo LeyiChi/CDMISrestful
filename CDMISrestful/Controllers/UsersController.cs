@@ -151,6 +151,20 @@ namespace CDMISrestful.Controllers
             PatientDetailInfo ret = repository.GetPatientDetailInfo(pclsCache, UserId);
             return ret;
         }
+
+        /// <summary>
+        /// csq 20170113 获取医生列表
+        /// </summary>
+        /// <param name="pclsCache"></param>
+        /// <returns></returns>
+        [Route("Api/v1/Users/doctorList")]
+        [RESTAuthorizeAttribute]
+        public List<Doctor> GetDoctorList()
+        {
+            List<Doctor> ret = repository.GetDoctorList(pclsCache);
+            return ret;
+        }
+
         /// <summary>
         /// 根据用户名获取医生身份信息
         /// </summary>

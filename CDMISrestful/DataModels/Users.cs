@@ -10,6 +10,15 @@ namespace CDMISrestful.DataModels
     {
     }
 
+    public class Doctor
+    {
+        public string DoctorId { get; set; }
+        public string DoctorName { get; set; }
+
+        // public int Birthday { get; set; }
+
+    }
+
     public class ModulesByPID
     {
         public string CategoryCode { get; set; }

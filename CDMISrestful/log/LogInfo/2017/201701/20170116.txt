@@ -1,0 +1,26 @@
+
+ 
+记录时间：2017-01-16 12:59:07,720 
+线程ID:[10] 
+日志级别：  INFO  
+日志描述：
+            Action执行时间监控：
+            ControllerName：UsersController
+            ActionName:GetDoctorList
+            开始时间：2017/1/16 12:59:07
+            结束时间：2017/1/16 12:59:07
+            总 时 间：0.4771964秒
+            Action参数：
+            Http请求头:Connection: keep-alive
+Accept: */*
+Accept-Encoding: gzip, deflate, sdch, br
+Accept-Language: zh-CN, zh; q=0.8
+Cookie: optimizelyEndUserId=oeu1477979897150r0.09124125619649393; optimizelySegments=%7B%223058721138%22%3A%22direct%22%2C%223065511694%22%3A%22gc%22%2C%223065981287%22%3A%22false%22%7D; optimizelyBuckets=%7B%7D; state-9B5E9FF1-C7C5-43E7-B1D4-D3000E6CBD26=SYSOP%3A; Username=UnknownUser; _ga=GA1.1.2008066046.1477979894; ASP.NET_SessionId=bqwabce0kfigl1u5y3px4nui
+Host: localhost:7516
+Referer: http://localhost:7516/Help/Api/GET-Api-v1-Users-doctorList
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36
+
+            客户端IP：::1,
+            HttpMethod:GET
+                    
+ 
