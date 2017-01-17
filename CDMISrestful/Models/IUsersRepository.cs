@@ -72,5 +72,10 @@ namespace CDMISrestful.Models
         int ConsultationChangeStatus(DataConnection pclsCache, string DoctorId, string PatientId, int SortNo, int Status, string revUserId, string TerminalName, string TerminalIP, int DeviceType);
 
         List<ConsultationDP> ConsultationGetDataByDP(DataConnection pclsCache, string DoctorId, string PatientId);
+
+        List<ConsultationHid> GetConsultationDataByHidPid1(DataConnection pclsCache, string HealthCoachId1);
+        List<ConsultationHid> GetConsultationDataByHidPid2(DataConnection pclsCache, string HealthCoachId, int status);
+        List<ConsultationHid> GetConsultationDataByHidPid3(DataConnection pclsCache, string HealthCoachId, string PatientId);
+        List<ConsultationHid> GetConsultationDataByHidPid4(DataConnection pclsCache, string HealthCoachId, string PatientId, int status);
     }
 }

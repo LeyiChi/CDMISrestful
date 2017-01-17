@@ -1576,6 +1576,15 @@
             <param name="PatientId"></param>
             <returns></returns>
         </member>
+        <member name="M:CDMISrestful.Controllers.UsersController.GetConsultationDataByHidPid(System.String,System.String,System.String)">
+            <summary>
+            根据DoctorId, PatientId(not required), status(not required)获取所有信息 zy 20170117
+            </summary>
+            <param name="strHealthCoachId"></param>
+            <param name="strPatientId"></param>
+            <param name="strstatus"></param>
+            <returns></returns>
+        </member>
         <member name="M:CDMISrestful.Controllers.VitalInfoController.GetLatestPatientVitalSigns(System.String,System.String,System.String)">
             <summary>
             GetLatestPatientVitalSigns 获取病人某项生理参数最新值 GL 2015-10-12

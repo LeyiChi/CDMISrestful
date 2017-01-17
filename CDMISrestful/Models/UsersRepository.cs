@@ -969,9 +969,125 @@ namespace CDMISrestful.Models
             return new UsersMethod().ConsultationGetDataByDP(pclsCache, DoctorId, PatientId);
         }
 
+<<<<<<< HEAD
         public List<Doctor> GetDoctorList(DataConnection pclsCache)
         {
             return new UsersMethod().GetDoctorList(pclsCache);
         }
+=======
+
+        #region<ConsultationHid Model>
+        public List<ConsultationHid> GetConsultationDataByHidPid1(DataConnection pclsCache, string HealthCoachId1)
+        {
+            return new UsersMethod().GetConsultationDataByHid(pclsCache, HealthCoachId1);
+        }
+
+        public List<ConsultationHid> GetConsultationDataByHidPid2(DataConnection pclsCache, string HealthCoachId, int status)
+        {
+            List<ConsultationHid> items = new List<ConsultationHid>();
+            items = new UsersMethod().GetConsultationDataByHid(pclsCache, HealthCoachId);
+            List<ConsultationHid> res = new List<ConsultationHid>();
+
+            foreach (ConsultationHid item in items)
+            {
+                int statustemp = item.Status;
+                if (status == 7)
+                {
+                    if ((statustemp == 1) || (statustemp == 2) || (statustemp == 3))
+                    {
+                        if (item != null)
+                        {
+                            res.Add(item);
+                        }
+                    }
+                }
+                if (status == 8)
+                {
+                    if ((statustemp == 4) || (statustemp == 5) || (statustemp == 6))
+                    {
+                        if (item != null)
+                        {
+                            res.Add(item);
+                        }
+                    }
+                }
+                else
+                {
+                    if (status == statustemp)
+                    {
+                        res.Add(item);
+                    }
+                }
+            }
+            return res;
+        }
+
+        public List<ConsultationHid> GetConsultationDataByHidPid3(DataConnection pclsCache, string HealthCoachId, string PatientId)
+        {
+            List<ConsultationHid> items = new List<ConsultationHid>();
+            items = new UsersMethod().GetConsultationDataByHid(pclsCache, HealthCoachId);
+            List<ConsultationHid> res = new List<ConsultationHid>();
+
+            foreach (ConsultationHid item in items)
+            {
+                if (item.PatientId == PatientId)
+                {
+                    res.Add(item);
+                }
+            }
+            return res;
+        }
+
+        public List<ConsultationHid> GetConsultationDataByHidPid4(DataConnection pclsCache, string HealthCoachId, string PatientId, int status)
+        {
+            List<ConsultationHid> items = new List<ConsultationHid>();
+            items = new UsersMethod().GetConsultationDataByHid(pclsCache, HealthCoachId);
+            List<ConsultationHid> res1 = new List<ConsultationHid>();
+            List<ConsultationHid> res2 = new List<ConsultationHid>();
+
+            foreach (ConsultationHid item in items)
+            {
+                if (item.PatientId == PatientId)
+                {
+                    res1.Add(item);
+                }
+            }
+
+            foreach (ConsultationHid item in res1)
+            {
+                int statustemp = item.Status;
+                if (status == 7)
+                {
+                    if ((statustemp == 1) || (statustemp == 2) || (statustemp == 3))
+                    {
+                        if (item != null)
+                        {
+                            res2.Add(item);
+                        }
+                    }
+                }
+                if (status == 8)
+                {
+                    if ((statustemp == 4) || (statustemp == 5) || (statustemp == 6))
+                    {
+                        if (item != null)
+                        {
+                            res2.Add(item);
+                        }
+                    }
+                }
+                else
+                {
+                    if (status == statustemp)
+                    {
+                        res2.Add(item);
+                    }
+                }
+            }
+
+            return res2;
+        }
+        #endregion
+>>>>>>> c12f01ed7ca9782af3c513bca526610e52bba453
     }
 }
