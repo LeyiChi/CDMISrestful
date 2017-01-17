@@ -969,12 +969,12 @@ namespace CDMISrestful.Models
             return new UsersMethod().ConsultationGetDataByDP(pclsCache, DoctorId, PatientId);
         }
 
-<<<<<<< HEAD
+
         public List<Doctor> GetDoctorList(DataConnection pclsCache)
         {
             return new UsersMethod().GetDoctorList(pclsCache);
         }
-=======
+
 
         #region<ConsultationHid Model>
         public List<ConsultationHid> GetConsultationDataByHidPid1(DataConnection pclsCache, string HealthCoachId1)
@@ -1088,6 +1088,6 @@ namespace CDMISrestful.Models
             return res2;
         }
         #endregion
->>>>>>> c12f01ed7ca9782af3c513bca526610e52bba453
+
     }
 }
